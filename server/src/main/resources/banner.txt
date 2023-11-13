@@ -1,0 +1,7 @@
+${AnsiColor.BLUE}
+<(@￣︶￣@)>
+帥(￣▽￣)σ"
+羞(#￣▽￣#)
+汗(￣口￣)!!
+ ${AnsiColor.YELLOW}ENV:${spring.profiles.active:default}                         ${AnsiColor.BRIGHT_RED}VERSION:${swagger2.version:1.0}
+ ${AnsiColor.DEFAULT}

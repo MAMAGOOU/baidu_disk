@@ -1,0 +1,48 @@
+spring:
+  redis:
+    database: 1
+    host: 127.0.0.1
+  application:
+    name: r-pan-server
+  output:
+    ansi:
+      enabled: always
+  mvc:
+    servlet:
+      load-on-startup: 1
+  servlet:
+    multipart:
+      max-file-size: 3072MB
+      max-request-size: 3072MB
+  datasource:
+    username: root
+    password: 111111
+    url: jdbc:mysql://127.0.0.1:3306/r_pan?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:mappers/**/*.xml
+
+
+server:
+  port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: env,beans
+
+swagger2:
+  show: false
+  group-name: ${spring.application.name}
+  base-package: com.rocket.pan
+  title: r-pan-server docs
+  description: r-pan-server docs
+  terms-of-service-url: http://127.0.0.1:${server.port}
+  contact-name: dong
+  contact-url: no
+  contact-email: 1975015544@qq.com
+  version: 1.0
+

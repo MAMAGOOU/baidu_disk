@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "name": "com.rocket.pan.cache.caffeine",
+      "type": "com.rocket.pan.cache.caffeine.test.config.CaffeineCacheProperties",
+      "sourceType": "com.rocket.pan.cache.caffeine.test.config.CaffeineCacheProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.rocket.pan.cache.caffeine.allow-null-value",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.rocket.pan.cache.caffeine.test.config.CaffeineCacheProperties"
+    },
+    {
+      "name": "com.rocket.pan.cache.caffeine.init-cache-capacity",
+      "type": "java.lang.Integer",
+      "description": "缓存初始容量 com.rocket.pan.cache.caffeine.init-cache-capacity",
+      "sourceType": "com.rocket.pan.cache.caffeine.test.config.CaffeineCacheProperties"
+    },
+    {
+      "name": "com.rocket.pan.cache.caffeine.max-cache-capacity",
+      "type": "java.lang.Long",
+      "sourceType": "com.rocket.pan.cache.caffeine.test.config.CaffeineCacheProperties"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,42 @@
+spring:
+    application:
+        name: r-pan-server
+    output:
+        ansi:
+            enabled: always
+    mvc:
+        servlet:
+            load-on-startup: 1
+    servlet:
+        multipart:
+            max-file-size: 3072MB
+            max-request-size: 3072MB
+
+
+
+server:
+    port: 8082
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+                exclude: env,beans
+
+swagger2:
+    show: false
+    group-name: ${spring.application.name}
+    base-package: com.rocket.pan
+    title: r-pan-server docs
+    description: r-pan-server docs
+    terms-of-service-url: http://127.0.0.1:${server.port}
+    contact-name: dong
+    contact-url: no
+    contact-email: 1975015544@qq.com
+    version: 1.0
+
+logging:
+    file: ${user.home}/logs/${spring.application.name}/${spring.application.name}.log
+    level:
+        root: INFO

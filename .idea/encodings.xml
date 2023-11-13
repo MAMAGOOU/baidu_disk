@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/distribution/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/cache/cache-caffeine/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/cache/cache-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/cache/cache-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/orm/mybatis-plus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/orm/mybatis-plus/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/schedule/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/swagger2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
