@@ -1,6 +1,6 @@
 package com.rocket.pan.swagger2;
 
-import com.rocket.pan.constants.RPanConstants;
+import com.rocket.pan.core.constants.RPanConstants;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

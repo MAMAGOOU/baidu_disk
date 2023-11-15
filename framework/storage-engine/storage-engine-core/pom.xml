@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.rocket.pan</groupId>
+        <artifactId>r-pan-storage-engine</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>r-pan-storage-engine-core</artifactId>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <!--都依赖与抽象，而非具体实现，顶层抽象之间一定要使用顶层抽象，
+        用具体实现代码侵入性很强，如果将来要更换我们需要更改代码，这是一个糟糕的代码设计-->
+        <dependency>
+            <groupId>com.rocket.pan</groupId>
+            <artifactId>r-pan-cache-core</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+</project>

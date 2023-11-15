@@ -1,7 +1,7 @@
 package com.rocket.pan.schedule;
 
-import com.rocket.pan.exception.RPanFrameworkException;
-import com.rocket.pan.util.UUIDUtil;
+import com.rocket.pan.core.exception.RPanFrameworkException;
+import com.rocket.pan.core.utils.UUIDUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

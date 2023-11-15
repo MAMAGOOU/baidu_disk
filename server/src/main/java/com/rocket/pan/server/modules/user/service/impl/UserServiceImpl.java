@@ -3,12 +3,11 @@ package com.rocket.pan.server.modules.user.service.impl;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.rocket.pan.cache.core.constants.CacheConstants;
-import com.rocket.pan.exception.RPanBusinessException;
-import com.rocket.pan.response.ResponseCode;
+import com.rocket.pan.core.exception.RPanBusinessException;
+import com.rocket.pan.core.response.ResponseCode;
 import com.rocket.pan.server.modules.file.constants.FileConstants;
 import com.rocket.pan.server.modules.file.context.CreateFolderContext;
 import com.rocket.pan.server.modules.file.entity.RPanUserFile;
@@ -20,9 +19,9 @@ import com.rocket.pan.server.modules.user.entity.RPanUser;
 import com.rocket.pan.server.modules.user.service.IUserService;
 import com.rocket.pan.server.modules.user.mapper.RPanUserMapper;
 import com.rocket.pan.server.modules.user.vo.UserInfoVO;
-import com.rocket.pan.util.IdUtil;
-import com.rocket.pan.util.JwtUtil;
-import com.rocket.pan.util.PasswordUtil;
+import com.rocket.pan.core.utils.IdUtil;
+import com.rocket.pan.core.utils.JwtUtil;
+import com.rocket.pan.core.utils.PasswordUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
@@ -30,7 +29,6 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.Objects;
 
 /**
  * @author 19750

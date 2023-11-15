@@ -1,0 +1,26 @@
+{
+  "groups": [
+    {
+      "name": "com.rocket.pan.storage.engine.local",
+      "type": "com.rocket.pan.storage.engine.local.config.LocalStorageEngineConfig",
+      "sourceType": "com.rocket.pan.storage.engine.local.config.LocalStorageEngineConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.rocket.pan.storage.engine.local.root-file-chunk-path",
+      "type": "java.lang.String",
+      "description": "文件分片上传的根目录.",
+      "sourceType": "com.rocket.pan.storage.engine.local.config.LocalStorageEngineConfig",
+      "defaultValue": "@see com.rocket.pan.core.utils.FileUtils.generateDefaultStoreFileChunkRealPath"
+    },
+    {
+      "name": "com.rocket.pan.storage.engine.local.root-file-path",
+      "type": "java.lang.String",
+      "description": "文件上传的根目录.",
+      "sourceType": "com.rocket.pan.storage.engine.local.config.LocalStorageEngineConfig",
+      "defaultValue": "@see com.rocket.pan.core.utils.FileUtils.generateDefaultStoreFileRealPath"
+    }
+  ],
+  "hints": []
+}

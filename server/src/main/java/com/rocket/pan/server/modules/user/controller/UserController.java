@@ -1,6 +1,6 @@
 package com.rocket.pan.server.modules.user.controller;
 
-import com.rocket.pan.response.R;
+import com.rocket.pan.core.response.R;
 import com.rocket.pan.server.common.annotation.LoginIgnore;
 import com.rocket.pan.server.common.utils.UserIdUtil;
 import com.rocket.pan.server.modules.user.context.*;
@@ -8,7 +8,7 @@ import com.rocket.pan.server.modules.user.converter.UserConverter;
 import com.rocket.pan.server.modules.user.po.*;
 import com.rocket.pan.server.modules.user.service.IUserService;
 import com.rocket.pan.server.modules.user.vo.UserInfoVO;
-import com.rocket.pan.util.IdUtil;
+import com.rocket.pan.core.utils.IdUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

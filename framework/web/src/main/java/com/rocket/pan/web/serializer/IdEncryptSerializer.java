@@ -3,7 +3,7 @@ package com.rocket.pan.web.serializer;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-import com.rocket.pan.util.IdUtil;
+import com.rocket.pan.core.utils.IdUtil;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;

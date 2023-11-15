@@ -1,6 +1,6 @@
 package com.rocket.pan.schedule.test.config;
 
-import com.rocket.pan.constants.RPanConstants;
+import com.rocket.pan.core.constants.RPanConstants;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 

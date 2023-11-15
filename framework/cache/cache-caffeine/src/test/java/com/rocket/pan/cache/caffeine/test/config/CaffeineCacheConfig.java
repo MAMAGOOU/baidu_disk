@@ -3,7 +3,7 @@ package com.rocket.pan.cache.caffeine.test.config;
 import com.github.benmanes.caffeine.cache.Caffeine;
 
 import com.rocket.pan.cache.core.constants.CacheConstants;
-import com.rocket.pan.constants.RPanConstants;
+import com.rocket.pan.core.constants.RPanConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.cache.CacheManager;

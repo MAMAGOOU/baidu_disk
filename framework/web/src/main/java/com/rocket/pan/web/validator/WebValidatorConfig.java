@@ -1,6 +1,6 @@
 package com.rocket.pan.web.validator;
 
-import com.rocket.pan.constants.RPanConstants;
+import com.rocket.pan.core.constants.RPanConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.HibernateValidator;
 import org.springframework.boot.SpringBootConfiguration;
