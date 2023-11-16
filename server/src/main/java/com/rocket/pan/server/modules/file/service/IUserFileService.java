@@ -4,6 +4,7 @@ import com.rocket.pan.server.modules.file.context.*;
 import com.rocket.pan.server.modules.file.entity.RPanUserFile;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.rocket.pan.server.modules.file.vo.FileChunkUploadVO;
+import com.rocket.pan.server.modules.file.vo.FolderTreeNodeVO;
 import com.rocket.pan.server.modules.file.vo.RPanUserFileVO;
 import com.rocket.pan.server.modules.file.vo.UploadedChunksVO;
 
@@ -93,13 +94,23 @@ public interface IUserFileService extends IService<RPanUserFile> {
 
     /**
      * 文件下载
+     *
      * @param context
      */
     void download(FileDownloadContext context);
 
     /**
      * 文件预览
+     *
      * @param context
      */
     void preview(FilePreviewContext context);
+
+    /**
+     * 查询用户的文件夹树
+     *
+     * @param context
+     * @return
+     */
+    List<FolderTreeNodeVO> getFolderTree(QueryFolderTreeContext context);
 }

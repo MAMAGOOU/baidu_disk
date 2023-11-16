@@ -11,6 +11,7 @@ import com.rocket.pan.server.modules.file.context.FileUploadContext;
 import com.rocket.pan.server.modules.file.context.QueryUploadedChunksContext;
 import com.rocket.pan.server.modules.file.context.SecUploadFileContext;
 import com.rocket.pan.server.modules.file.context.UpdateFilenameContext;
+import com.rocket.pan.server.modules.file.entity.RPanUserFile;
 import com.rocket.pan.server.modules.file.po.CreateFolderPO;
 import com.rocket.pan.server.modules.file.po.DeleteFilePO;
 import com.rocket.pan.server.modules.file.po.FileChunkMergePO;
@@ -19,13 +20,14 @@ import com.rocket.pan.server.modules.file.po.FileUploadPO;
 import com.rocket.pan.server.modules.file.po.QueryUploadedChunksPO;
 import com.rocket.pan.server.modules.file.po.SecUploadFilePO;
 import com.rocket.pan.server.modules.file.po.UpdateFilenamePO;
+import com.rocket.pan.server.modules.file.vo.FolderTreeNodeVO;
 import com.rocket.pan.storage.engine.core.context.StoreFileChunkContext;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-11-16T02:35:53+0800",
+    date = "2023-11-16T20:35:29+0800",
     comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.18 (Oracle Corporation)"
 )
 @Component
@@ -238,5 +240,22 @@ public class FileConverterImpl implements FileConverter {
         fileChunkMergeAndSaveContext.setRecord( context.getRecord() );
 
         return fileChunkMergeAndSaveContext;
+    }
+
+    @Override
+    public FolderTreeNodeVO rPanUserFile2FolderTreeNodeVO(RPanUserFile record) {
+        if ( record == null ) {
+            return null;
+        }
+
+        FolderTreeNodeVO folderTreeNodeVO = new FolderTreeNodeVO();
+
+        folderTreeNodeVO.setLabel( record.getFilename() );
+        folderTreeNodeVO.setId( record.getFileId() );
+        folderTreeNodeVO.setParentId( record.getParentId() );
+
+        folderTreeNodeVO.setChildren( com.google.common.collect.Lists.newArrayList() );
+
+        return folderTreeNodeVO;
     }
 }

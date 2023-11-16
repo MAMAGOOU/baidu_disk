@@ -12,6 +12,7 @@ import com.rocket.pan.server.modules.file.enums.DelFlagEnum;
 import com.rocket.pan.server.modules.file.po.*;
 import com.rocket.pan.server.modules.file.service.IUserFileService;
 import com.rocket.pan.server.modules.file.vo.FileChunkUploadVO;
+import com.rocket.pan.server.modules.file.vo.FolderTreeNodeVO;
 import com.rocket.pan.server.modules.file.vo.RPanUserFileVO;
 import com.rocket.pan.server.modules.file.vo.UploadedChunksVO;
 import com.rocket.pan.server.modules.user.service.IUserService;
@@ -220,6 +221,18 @@ public class FileController {
         iUserFileService.preview(context);
     }
 
-
+    @ApiOperation(
+            value = "查询文件夹树",
+            notes = "该接口提供了查询文件夹树的功能",
+            consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE
+    )
+    @GetMapping("/file/folder/tree")
+    public R<List<FolderTreeNodeVO>> getFolderTree() {
+        QueryFolderTreeContext context = new QueryFolderTreeContext();
+        context.setUserId(UserIdUtil.get());
+        List<FolderTreeNodeVO> result = iUserFileService.getFolderTree(context);
+        return R.data(result);
+    }
 
 }

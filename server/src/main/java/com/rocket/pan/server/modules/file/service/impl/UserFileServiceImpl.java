@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.google.common.collect.Lists;
 import com.rocket.pan.core.constants.RPanConstants;
 import com.rocket.pan.core.exception.RPanBusinessException;
 import com.rocket.pan.core.response.R;
@@ -28,6 +29,7 @@ import com.rocket.pan.server.modules.file.service.IFileService;
 import com.rocket.pan.server.modules.file.service.IUserFileService;
 import com.rocket.pan.server.modules.file.mapper.RPanUserFileMapper;
 import com.rocket.pan.server.modules.file.vo.FileChunkUploadVO;
+import com.rocket.pan.server.modules.file.vo.FolderTreeNodeVO;
 import com.rocket.pan.server.modules.file.vo.RPanUserFileVO;
 import com.rocket.pan.core.utils.IdUtil;
 import com.rocket.pan.server.modules.file.vo.UploadedChunksVO;
@@ -47,9 +49,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -432,6 +432,61 @@ public class UserFileServiceImpl extends ServiceImpl<RPanUserFileMapper, RPanUse
         }
 
         doPreview(record, context.getResponse());
+    }
+
+    /**
+     * 查询用户的文件夹树
+     * 不推荐使用递归查询，每次递归都需要查询数据库，在接口总耗时里面是非常耗时的，能一次链接搞定就一次搞定
+     * 实现业务简单、效率高、占用资源少，评判接口好坏的指标
+     * <p>
+     * 1. 查询出该用户的所有文件夹列表
+     * 2. 在内存中拼接文件夹树
+     *
+     * @param context
+     * @return
+     */
+    @Override
+    public List<FolderTreeNodeVO> getFolderTree(QueryFolderTreeContext context) {
+        List<RPanUserFile> folderRecords = queryFolderRecords(context.getUserId());
+        List<FolderTreeNodeVO> result = assembleFolderTreeNodeVOList(folderRecords);
+        return result;
+    }
+
+    private List<FolderTreeNodeVO> assembleFolderTreeNodeVOList(List<RPanUserFile> folderRecords) {
+        if (CollectionUtil.isEmpty(folderRecords)) {
+            return Lists.newArrayList();
+        }
+
+        List<FolderTreeNodeVO> mappedFolderTreeNodeVOList = folderRecords.stream()
+                .map(fileConverter::rPanUserFile2FolderTreeNodeVO).collect(Collectors.toList());
+        // 这步分组很关键
+        // 只是做了引用的复制没有在堆里创建新的对象，所有的过程都是对象的copy操作，没有改变对象的位置也没有生成新的对象
+        Map<Long, List<FolderTreeNodeVO>> mappedFolderTreeNodeVOMap = mappedFolderTreeNodeVOList.stream().collect(Collectors.groupingBy(FolderTreeNodeVO::getParentId));
+
+        for (FolderTreeNodeVO node : mappedFolderTreeNodeVOList) {
+            List<FolderTreeNodeVO> children = mappedFolderTreeNodeVOMap.get(node.getId());
+            if (CollectionUtil.isNotEmpty(children)) {
+                node.getChildren().addAll(children);
+            }
+        }
+
+        return mappedFolderTreeNodeVOList.stream()
+                .filter(node -> ObjectUtil.equal(node.getParentId(), FileConstants.TOP_PARENT_ID))
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * 查询出该用户的所有文件夹列表
+     *
+     * @param userId
+     * @return
+     */
+    private List<RPanUserFile> queryFolderRecords(Long userId) {
+        LambdaQueryWrapper<RPanUserFile> lambdaQueryWrapper = Wrappers.<RPanUserFile>lambdaQuery()
+                .eq(RPanUserFile::getUserId, userId)
+                .eq(RPanUserFile::getFolderFlag, FolderFlagEnum.YES.getCode())
+                .eq(RPanUserFile::getDelFlag, DelFlagEnum.NO.getCode());
+        return list(lambdaQueryWrapper);
     }
 
 

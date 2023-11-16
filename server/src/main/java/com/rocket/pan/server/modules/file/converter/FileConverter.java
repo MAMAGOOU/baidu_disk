@@ -1,7 +1,9 @@
 package com.rocket.pan.server.modules.file.converter;
 
 import com.rocket.pan.server.modules.file.context.*;
+import com.rocket.pan.server.modules.file.entity.RPanUserFile;
 import com.rocket.pan.server.modules.file.po.*;
+import com.rocket.pan.server.modules.file.vo.FolderTreeNodeVO;
 import com.rocket.pan.storage.engine.core.context.StoreFileChunkContext;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mapper;
@@ -54,4 +56,10 @@ public interface FileConverter {
     FileChunkMergeContext fileChunkMergePO2FileChunkMergeContext(FileChunkMergePO fileChunkMergePO);
 
     FileChunkMergeAndSaveContext fileChunkMergeContext2FileChunkMergeAndSaveContext(FileChunkMergeContext context);
+
+
+    @Mapping(target = "label", source = "record.filename")
+    @Mapping(target = "id", source = "record.fileId")
+    @Mapping(target = "children", expression = "java(com.google.common.collect.Lists.newArrayList())")
+    FolderTreeNodeVO rPanUserFile2FolderTreeNodeVO(RPanUserFile record);
 }
