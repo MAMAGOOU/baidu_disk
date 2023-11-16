@@ -235,4 +235,26 @@ public class FileController {
         return R.data(result);
     }
 
+    @ApiOperation(
+            value = "文件转移",
+            notes = "该接口提供了文件转移的功能",
+            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE
+    )
+    @PostMapping("/file/transfer")
+    public R transfer(@Validated @RequestBody TransferFilePO transferFilePO) {
+        String fileIds = transferFilePO.getFileIds();
+        String targetParentId = transferFilePO.getTargetParentId();
+        List<Long> fileIdList = Splitter.on(RPanConstants.COMMON_SEPARATOR).splitToList(fileIds).stream().map(IdUtil::decrypt).collect(Collectors.toList());
+
+        TransferFileContext context = new TransferFileContext();
+        context.setFileIdList(fileIdList);
+        context.setTargetParentId(IdUtil.decrypt(targetParentId));
+        context.setUserId(UserIdUtil.get());
+
+        iUserFileService.transfer(context);
+
+        return R.success();
+    }
+
 }

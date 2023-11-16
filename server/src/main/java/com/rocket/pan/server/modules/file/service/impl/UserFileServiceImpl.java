@@ -4,6 +4,7 @@ import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -11,7 +12,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.google.common.collect.Lists;
 import com.rocket.pan.core.constants.RPanConstants;
 import com.rocket.pan.core.exception.RPanBusinessException;
-import com.rocket.pan.core.response.R;
 import com.rocket.pan.core.utils.FileUtils;
 import com.rocket.pan.server.common.event.file.DeleteFileEvent;
 import com.rocket.pan.server.common.utils.HttpUtil;
@@ -35,16 +35,12 @@ import com.rocket.pan.core.utils.IdUtil;
 import com.rocket.pan.server.modules.file.vo.UploadedChunksVO;
 import com.rocket.pan.storage.engine.core.StorageEngine;
 import com.rocket.pan.storage.engine.core.context.ReadFileContext;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -450,6 +446,111 @@ public class UserFileServiceImpl extends ServiceImpl<RPanUserFileMapper, RPanUse
         List<RPanUserFile> folderRecords = queryFolderRecords(context.getUserId());
         List<FolderTreeNodeVO> result = assembleFolderTreeNodeVOList(folderRecords);
         return result;
+    }
+
+    /**
+     * 文件转移
+     * 1. 权限校验
+     * 2. 执行工作
+     *
+     * @param context
+     */
+    @Override
+    public void transfer(TransferFileContext context) {
+        checkTransferCondition(context);
+        doTransfer(context);
+    }
+
+    /**
+     * 执行文件转移操作
+     *
+     * @param context
+     */
+    private void doTransfer(TransferFileContext context) {
+        List<RPanUserFile> prepareRecords = context.getPrepareRecords();
+        prepareRecords.stream().forEach(record -> {
+            record.setParentId(context.getTargetParentId());
+            record.setUserId(context.getUserId());
+            record.setCreateUser(context.getUserId());
+            record.setCreateTime(new Date());
+            record.setUpdateUser(context.getUserId());
+            record.setUpdateTime(new Date());
+            handleDuplicateFilename(record);
+        });
+        if (!updateBatchById(prepareRecords)) {
+            throw new RPanBusinessException("文件转移失败");
+        }
+    }
+
+    /**
+     * 文件转移的条件校验
+     *
+     * @param context
+     */
+    private void checkTransferCondition(TransferFileContext context) {
+        Long targetParentId = context.getTargetParentId();
+
+        if (!checkIsFolder(getById(targetParentId))) {
+            throw new RPanBusinessException("目标文件不是一个文件夹");
+        }
+
+        List<Long> fileIdList = context.getFileIdList();
+        List<RPanUserFile> prepareRecords = listByIds(fileIdList);
+        context.setPrepareRecords(prepareRecords);
+        if (checkIsChildFolder(prepareRecords, targetParentId, context.getUserId())) {
+            throw new RPanBusinessException("目标文件夹ID不能是选中文件列表的文件夹ID及其子文件夹ID");
+        }
+    }
+
+    /**
+     * 校验目标文件夹ID都是要操作的文件记录的文件夹ID以及其子文件夹ID
+     *
+     * @param prepareRecords
+     * @param targetParentId
+     * @param userId
+     * @return
+     */
+    private boolean checkIsChildFolder(List<RPanUserFile> prepareRecords, Long targetParentId, Long userId) {
+        prepareRecords = prepareRecords.stream()
+                .filter(record -> Objects.equals(record.getFolderFlag(), FolderFlagEnum.YES.getCode()))
+                .collect(Collectors.toList());
+
+        if (CollectionUtils.isEmpty(prepareRecords)) {
+            return false;
+        }
+
+        List<RPanUserFile> folderRecords = queryFolderRecords(userId);
+        Map<Long, List<RPanUserFile>> folderRecordMap = folderRecords.stream()
+                .collect(Collectors.groupingBy(RPanUserFile::getParentId));
+
+        List<RPanUserFile> unavailableFolderRecords = Lists.newArrayList();
+
+        unavailableFolderRecords.addAll(prepareRecords);
+        prepareRecords.stream().forEach(record -> findAllChildFolderRecords(unavailableFolderRecords, folderRecordMap, record));
+
+        List<Long> unavailableFolderRecordIds = unavailableFolderRecords.stream()
+                .map(RPanUserFile::getFileId).collect(Collectors.toList());
+
+        return unavailableFolderRecordIds.contains(targetParentId);
+    }
+
+    /**
+     * 查找文件夹的所有子文件夹记录
+     *
+     * @param unavailableFolderRecords
+     * @param folderRecordMap
+     * @param record
+     */
+    private void findAllChildFolderRecords(List<RPanUserFile> unavailableFolderRecords, Map<Long, List<RPanUserFile>> folderRecordMap, RPanUserFile record) {
+        if (Objects.isNull(record)) {
+            return;
+        }
+        List<RPanUserFile> childFolderRecords = folderRecordMap.get(record.getFileId());
+        if (CollectionUtils.isEmpty(childFolderRecords)) {
+            return;
+        }
+        unavailableFolderRecords.addAll(childFolderRecords);
+        childFolderRecords.stream().forEach(childRecord -> findAllChildFolderRecords(unavailableFolderRecords, folderRecordMap, childRecord));
     }
 
     private List<FolderTreeNodeVO> assembleFolderTreeNodeVOList(List<RPanUserFile> folderRecords) {
