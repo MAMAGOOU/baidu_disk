@@ -2,15 +2,13 @@ package com.rocket.pan.storage.engine.local;
 
 import com.rocket.pan.core.utils.FileUtils;
 import com.rocket.pan.storage.engine.core.AbstractStorageEngine;
-import com.rocket.pan.storage.engine.core.context.DeleteFileContext;
-import com.rocket.pan.storage.engine.core.context.MergeFileContext;
-import com.rocket.pan.storage.engine.core.context.StoreFileChunkContext;
-import com.rocket.pan.storage.engine.core.context.StoreFileContext;
+import com.rocket.pan.storage.engine.core.context.*;
 import com.rocket.pan.storage.engine.local.config.LocalStorageEngineConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.List;
@@ -83,6 +81,16 @@ public class LocalStorageEngine extends AbstractStorageEngine {
         }
         FileUtils.deleteFiles(chunkPaths);
         context.setRealPath(realFilePath);
+    }
+
+    /**
+     * 读取文件内容并写入到输出流中
+     * 下沉到子类中实现
+     */
+    @Override
+    protected void doReadFile(ReadFileContext context) throws IOException {
+        File file = new File(context.getRealPath());
+        FileUtils.writeFile2OutputStream(new FileInputStream(file),context.getOutputStream(),file.length());
     }
 
 

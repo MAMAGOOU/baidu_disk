@@ -1,10 +1,7 @@
 package com.rocket.pan.storage.engine.oss;
 
 import com.rocket.pan.storage.engine.core.AbstractStorageEngine;
-import com.rocket.pan.storage.engine.core.context.DeleteFileContext;
-import com.rocket.pan.storage.engine.core.context.MergeFileContext;
-import com.rocket.pan.storage.engine.core.context.StoreFileChunkContext;
-import com.rocket.pan.storage.engine.core.context.StoreFileContext;
+import com.rocket.pan.storage.engine.core.context.*;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -57,6 +54,15 @@ public class OSSStorageEngine extends AbstractStorageEngine {
      */
     @Override
     protected void doMergeFile(MergeFileContext context) throws IOException {
+
+    }
+
+    /**
+     * 读取文件内容并写入到输出流中
+     * 下沉到子类中实现
+     */
+    @Override
+    protected void doReadFile(ReadFileContext context) throws IOException{
 
     }
 

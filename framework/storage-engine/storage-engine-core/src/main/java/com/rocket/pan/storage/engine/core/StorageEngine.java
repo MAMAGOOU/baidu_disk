@@ -1,9 +1,6 @@
 package com.rocket.pan.storage.engine.core;
 
-import com.rocket.pan.storage.engine.core.context.DeleteFileContext;
-import com.rocket.pan.storage.engine.core.context.MergeFileContext;
-import com.rocket.pan.storage.engine.core.context.StoreFileChunkContext;
-import com.rocket.pan.storage.engine.core.context.StoreFileContext;
+import com.rocket.pan.storage.engine.core.context.*;
 
 import java.io.IOException;
 
@@ -47,5 +44,12 @@ public interface StorageEngine {
      */
     void mergeFile(MergeFileContext context) throws IOException;
 
+    /**
+     * 读取文件内容写入到输出流中
+     *
+     * @param context
+     * @throws IOException
+     */
+    void readFile(ReadFileContext context) throws IOException;
 
 }

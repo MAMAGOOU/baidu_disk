@@ -90,4 +90,16 @@ public interface IUserFileService extends IService<RPanUserFile> {
      * @param context
      */
     void mergeFile(FileChunkMergeContext context);
+
+    /**
+     * 文件下载
+     * @param context
+     */
+    void download(FileDownloadContext context);
+
+    /**
+     * 文件预览
+     * @param context
+     */
+    void preview(FilePreviewContext context);
 }
