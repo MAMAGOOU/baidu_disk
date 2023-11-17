@@ -14,6 +14,7 @@ import com.rocket.pan.core.constants.RPanConstants;
 import com.rocket.pan.core.exception.RPanBusinessException;
 import com.rocket.pan.core.utils.FileUtils;
 import com.rocket.pan.server.common.event.file.DeleteFileEvent;
+import com.rocket.pan.server.common.event.search.UserSearchEvent;
 import com.rocket.pan.server.common.utils.HttpUtil;
 import com.rocket.pan.server.modules.file.constants.FileConstants;
 import com.rocket.pan.server.modules.file.context.*;
@@ -28,11 +29,8 @@ import com.rocket.pan.server.modules.file.service.IFileChunkService;
 import com.rocket.pan.server.modules.file.service.IFileService;
 import com.rocket.pan.server.modules.file.service.IUserFileService;
 import com.rocket.pan.server.modules.file.mapper.RPanUserFileMapper;
-import com.rocket.pan.server.modules.file.vo.FileChunkUploadVO;
-import com.rocket.pan.server.modules.file.vo.FolderTreeNodeVO;
-import com.rocket.pan.server.modules.file.vo.RPanUserFileVO;
+import com.rocket.pan.server.modules.file.vo.*;
 import com.rocket.pan.core.utils.IdUtil;
-import com.rocket.pan.server.modules.file.vo.UploadedChunksVO;
 import com.rocket.pan.storage.engine.core.StorageEngine;
 import com.rocket.pan.storage.engine.core.context.ReadFileContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,6 +55,7 @@ import java.util.stream.Collectors;
 public class UserFileServiceImpl extends ServiceImpl<RPanUserFileMapper, RPanUserFile>
         implements IUserFileService, ApplicationContextAware {
 
+
     private ApplicationContext applicationContext;
 
     @Autowired
@@ -70,6 +69,7 @@ public class UserFileServiceImpl extends ServiceImpl<RPanUserFileMapper, RPanUse
 
     @Autowired
     private StorageEngine storageEngine;
+
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) {
@@ -472,6 +472,91 @@ public class UserFileServiceImpl extends ServiceImpl<RPanUserFileMapper, RPanUse
     public void copy(CopyFileContext context) {
         checkCopyCondition(context);
         doCopy(context);
+    }
+
+    /**
+     * 文件列表搜索
+     * 1. 执行文件搜索
+     * 2. 拼装文件的父文件夹名称
+     * 3. 执行文件搜索后的后置操作
+     *
+     * @param context
+     * @return
+     */
+    @Override
+    public List<FileSearchResultVO> search(FileSearchContext context) {
+        List<FileSearchResultVO> result = doSearch(context);
+        fillParentFilename(result);
+        afterSearch(context);
+        return result;
+    }
+
+    /**
+     * 获取面包屑列表
+     * 1. 获取用户所有的文件夹信息
+     * 2. 拼接需要使用到的面包屑列表
+     *
+     * @param context
+     * @return
+     */
+    @Override
+    public List<BreadcrumbVO> getBreadcrumbs(QueryBreadcrumbsContext context) {
+        List<RPanUserFile> folderRecords = queryFolderRecords(context.getUserId());
+        Map<Long, BreadcrumbVO> prepareBreadcrumbVOMap = folderRecords.stream()
+                .map(BreadcrumbVO::transfer)
+                .collect(Collectors.toMap(BreadcrumbVO::getId, a -> a));
+
+        BreadcrumbVO currentNode;
+        Long fileId = context.getFileId();
+        LinkedList<BreadcrumbVO> result = Lists.newLinkedList();
+        do {
+            currentNode = prepareBreadcrumbVOMap.get(fileId);
+            if (ObjectUtil.isNotNull(currentNode)) {
+                result.add(0, currentNode);
+                fileId = currentNode.getParentId();
+            }
+        } while (ObjectUtil.isNotNull(currentNode));
+
+        return result;
+    }
+
+    /**
+     * 搜索的后置操作
+     * 1. 发布文件的搜索的事件
+     * 2.
+     *
+     * @param context
+     */
+    private void afterSearch(FileSearchContext context) {
+        UserSearchEvent event = new UserSearchEvent(this, context.getKeyword(), context.getUserId());
+        applicationContext.publishEvent(event);
+    }
+
+    /**
+     * 填充文件列表的父文件名称
+     *
+     * @param result
+     */
+    private void fillParentFilename(List<FileSearchResultVO> result) {
+        if (CollectionUtil.isEmpty(result)) {
+            return;
+        }
+
+        List<Long> parentIdList = result.stream().map(FileSearchResultVO::getParentId).collect(Collectors.toList());
+        List<RPanUserFile> parentRecords = listByIds(parentIdList);
+        Map<Long, String> fileId2FilenameMap = parentRecords.stream().collect(Collectors.toMap(RPanUserFile::getFileId, RPanUserFile::getFilename));
+
+        result.stream().forEach(vo -> vo.setParentFilename(fileId2FilenameMap.get(vo.getParentId())));
+    }
+
+    /**
+     * 搜索文件列表
+     *
+     * @param context
+     * @return
+     */
+    private List<FileSearchResultVO> doSearch(FileSearchContext context) {
+        return baseMapper.searchFile(context);
     }
 
     /**

@@ -46,4 +46,26 @@
         </where>
         AND del_flag = #{param.delFlag}
     </select>
+
+
+    <!--文件搜索-->
+    <select id="searchFile" resultType="com.rocket.pan.server.modules.file.vo.FileSearchResultVO">
+        SELECT file_id AS fileId,
+        parent_id AS parentId,
+        filename AS filename,
+        file_size_desc AS fileSizeDesc,
+        folder_flag AS folderFlag,
+        file_type AS fileType,
+        update_time AS updateTime
+        FROM r_pan_user_file
+        WHERE user_id = #{param.userId}
+        AND filename LIKE CONCAT(#{param.keyword}, '%')
+        <if test="param.fileTypeArray != null">
+            AND file_type IN
+            <foreach collection="param.fileTypeArray" open="(" close=")" item="item" separator=",">
+                #{item}
+            </foreach>
+        </if>
+        AND del_flag=0
+    </select>
 </mapper>

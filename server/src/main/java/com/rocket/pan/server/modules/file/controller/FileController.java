@@ -11,13 +11,11 @@ import com.rocket.pan.server.modules.file.converter.FileConverter;
 import com.rocket.pan.server.modules.file.enums.DelFlagEnum;
 import com.rocket.pan.server.modules.file.po.*;
 import com.rocket.pan.server.modules.file.service.IUserFileService;
-import com.rocket.pan.server.modules.file.vo.FileChunkUploadVO;
-import com.rocket.pan.server.modules.file.vo.FolderTreeNodeVO;
-import com.rocket.pan.server.modules.file.vo.RPanUserFileVO;
-import com.rocket.pan.server.modules.file.vo.UploadedChunksVO;
+import com.rocket.pan.server.modules.file.vo.*;
 import com.rocket.pan.server.modules.user.service.IUserService;
 import com.rocket.pan.core.utils.IdUtil;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
@@ -26,6 +24,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.stream.Collectors;
 
@@ -276,4 +276,38 @@ public class FileController {
         return R.success();
     }
 
+    @ApiOperation(
+            value = "文件搜索",
+            notes = "该接口提供了文件搜索的功能",
+            consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE
+    )
+    @GetMapping("/file/search")
+    public R<List<FileSearchResultVO>> search(@Validated FileSearchPO fileSearchPO) {
+        FileSearchContext context = new FileSearchContext();
+        context.setKeyword(fileSearchPO.getKeyword());
+        context.setUserId(UserIdUtil.get());
+        String fileTypes = fileSearchPO.getFileTypes();
+        if (StringUtils.isNotBlank(fileTypes) && !Objects.equals(FileConstants.ALL_FILE_TYPE, fileTypes)) {
+            List<Integer> fileTypeArray = Splitter.on(RPanConstants.COMMON_SEPARATOR).splitToList(fileTypes).stream().map(Integer::valueOf).collect(Collectors.toList());
+            context.setFileTypeArray(fileTypeArray);
+        }
+        List<FileSearchResultVO> result = iUserFileService.search(context);
+        return R.data(result);
+    }
+
+    @ApiOperation(
+            value = "查询面包屑列表",
+            notes = "该接口提供了查询面包屑列表的功能",
+            consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE
+    )
+    @GetMapping("/file/breadcrumbs")
+    public R<List<BreadcrumbVO>> getBreadcrumbs(@NotBlank(message = "文件ID不能为空") @RequestParam(value = "fileId", required = false) String fileId) {
+        QueryBreadcrumbsContext context = new QueryBreadcrumbsContext();
+        context.setFileId(IdUtil.decrypt(fileId));
+        context.setUserId(UserIdUtil.get());
+        List<BreadcrumbVO> result = iUserFileService.getBreadcrumbs(context);
+        return R.data(result);
+    }
 }

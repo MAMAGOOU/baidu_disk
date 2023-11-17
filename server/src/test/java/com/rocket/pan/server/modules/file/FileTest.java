@@ -15,10 +15,7 @@ import com.rocket.pan.server.modules.file.enums.MergeFlagEnum;
 import com.rocket.pan.server.modules.file.service.IFileChunkService;
 import com.rocket.pan.server.modules.file.service.IFileService;
 import com.rocket.pan.server.modules.file.service.IUserFileService;
-import com.rocket.pan.server.modules.file.vo.FileChunkUploadVO;
-import com.rocket.pan.server.modules.file.vo.FolderTreeNodeVO;
-import com.rocket.pan.server.modules.file.vo.RPanUserFileVO;
-import com.rocket.pan.server.modules.file.vo.UploadedChunksVO;
+import com.rocket.pan.server.modules.file.vo.*;
 import com.rocket.pan.server.modules.user.context.UserRegisterContext;
 import com.rocket.pan.server.modules.user.service.IUserService;
 import com.rocket.pan.server.modules.user.vo.UserInfoVO;
@@ -719,5 +716,55 @@ public class FileTest {
         iUserFileService.copy(copyFileContext);
     }
 
+    /**
+     * 测试文件搜索成功
+     */
+    @Test
+    public void testSearchSuccess() {
+        Long userId = register();
+        UserInfoVO userInfoVO = info(userId);
+
+        CreateFolderContext context = new CreateFolderContext();
+        context.setParentId(userInfoVO.getRootFileId());
+        context.setUserId(userId);
+        context.setFolderName("folder-name-1");
+
+        Long folder1 = iUserFileService.createFolder(context);
+        Assert.notNull(folder1);
+
+        FileSearchContext fileSearchContext = new FileSearchContext();
+        fileSearchContext.setUserId(userId);
+        fileSearchContext.setKeyword("folder-name");
+        List<FileSearchResultVO> result = iUserFileService.search(fileSearchContext);
+        Assert.notEmpty(result);
+
+        fileSearchContext.setKeyword("name-1");
+        result = iUserFileService.search(fileSearchContext);
+        Assert.isTrue(CollectionUtils.isEmpty(result));
+    }
+    /**
+     * 测试查询文件面包屑导航列表成功
+     */
+    @Test
+    public void testGetBreadcrumbsSuccess() {
+        Long userId = register();
+        UserInfoVO userInfoVO = info(userId);
+
+        CreateFolderContext context = new CreateFolderContext();
+        context.setParentId(userInfoVO.getRootFileId());
+        context.setUserId(userId);
+        context.setFolderName("folder-name-1");
+
+        Long folder1 = iUserFileService.createFolder(context);
+        Assert.notNull(folder1);
+
+        QueryBreadcrumbsContext queryBreadcrumbsContext = new QueryBreadcrumbsContext();
+        queryBreadcrumbsContext.setFileId(folder1);
+        queryBreadcrumbsContext.setUserId(userId);
+
+        List<BreadcrumbVO> result = iUserFileService.getBreadcrumbs(queryBreadcrumbsContext);
+        Assert.notEmpty(result);
+        Assert.isTrue(result.size() == 2);
+    }
 
 }
