@@ -462,6 +462,100 @@ public class UserFileServiceImpl extends ServiceImpl<RPanUserFileMapper, RPanUse
     }
 
     /**
+     * 文件复制
+     * 1. 条件校验
+     * 2. 执行动作
+     *
+     * @param context
+     */
+    @Override
+    public void copy(CopyFileContext context) {
+        checkCopyCondition(context);
+        doCopy(context);
+    }
+
+    /**
+     * 执行文件复制的动作
+     *
+     * @param context
+     */
+    private void doCopy(CopyFileContext context) {
+        List<RPanUserFile> prepareRecords = context.getPrepareRecords();
+        if (CollectionUtils.isNotEmpty(prepareRecords)) {
+            List<RPanUserFile> allRecords = Lists.newArrayList();
+            prepareRecords.stream().forEach(record -> assembleCopyChildRecord(allRecords, record, context.getTargetParentId(), context.getUserId()));
+            if (!saveBatch(allRecords)) {
+                throw new RPanBusinessException("文件复制失败");
+            }
+        }
+    }
+
+    /**
+     * 拼装当前文件记录以及所有的子文件记录
+     *
+     * @param allRecords
+     * @param record
+     * @param targetParentId
+     * @param userId
+     */
+    private void assembleCopyChildRecord(List<RPanUserFile> allRecords, RPanUserFile record, Long targetParentId, Long userId) {
+        Long newFileId = IdUtil.get();
+        Long oldFileId = record.getFileId();
+
+        record.setParentId(targetParentId);
+        record.setFileId(newFileId);
+        record.setUserId(userId);
+        record.setCreateUser(userId);
+        record.setCreateTime(new Date());
+        record.setUpdateUser(userId);
+        record.setUpdateTime(new Date());
+        handleDuplicateFilename(record);
+
+        allRecords.add(record);
+
+        if (checkIsFolder(record)) {
+            List<RPanUserFile> childRecords = findChildRecords(oldFileId);
+            if (CollectionUtils.isEmpty(childRecords)) {
+                return;
+            }
+            childRecords.stream().forEach(childRecord -> assembleCopyChildRecord(allRecords, childRecord, newFileId, userId));
+        }
+    }
+
+    /**
+     * 查找下一级的文件记录
+     *
+     * @param parentId
+     * @return
+     */
+    private List<RPanUserFile> findChildRecords(Long parentId) {
+        LambdaQueryWrapper<RPanUserFile> lambdaQueryWrapper = Wrappers.<RPanUserFile>lambdaQuery()
+                .eq(RPanUserFile::getParentId, parentId)
+                .eq(RPanUserFile::getDelFlag, DelFlagEnum.NO.getCode());
+        return list(lambdaQueryWrapper);
+    }
+
+    /**
+     * 文件转移的条件校验
+     * 1. 目标文件必须是一个文件夹
+     * 2. 选中的要转移的文件列表中不能含有目标文件夹及其子文件夹
+     *
+     * @param context
+     */
+    private void checkCopyCondition(CopyFileContext context) {
+        Long targetParentId = context.getTargetParentId();
+        if (!checkIsFolder(getById(targetParentId))) {
+            throw new RPanBusinessException("目标文件不是一个文件夹");
+        }
+        List<Long> fileIdList = context.getFileIdList();
+        List<RPanUserFile> prepareRecords = listByIds(fileIdList);
+        context.setPrepareRecords(prepareRecords);
+        if (checkIsChildFolder(prepareRecords, targetParentId, context.getUserId())) {
+            throw new RPanBusinessException("目标文件夹ID不能是选中文件列表的文件夹ID或其子文件夹ID");
+        }
+    }
+
+    /**
      * 执行文件转移操作
      *
      * @param context
