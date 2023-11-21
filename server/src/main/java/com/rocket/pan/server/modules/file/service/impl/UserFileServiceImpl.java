@@ -51,7 +51,7 @@ import java.util.stream.Collectors;
  * @description 针对表【r_pan_user_file(用户文件信息表)】的数据库操作Service实现
  * @createDate 2023-11-11 14:40:41
  */
-@Service("userFileService")
+@Service
 public class UserFileServiceImpl extends ServiceImpl<RPanUserFileMapper, RPanUserFile>
         implements IUserFileService, ApplicationContextAware {
 
@@ -118,7 +118,9 @@ public class UserFileServiceImpl extends ServiceImpl<RPanUserFileMapper, RPanUse
      */
     @Override
     public List<RPanUserFileVO> getFileList(QueryFileListContext context) {
-        return baseMapper.selectFileList(context);
+        List<RPanUserFileVO> rPanUserFileVOS = baseMapper.selectFileList(context);
+        System.out.println();
+        return rPanUserFileVOS;
     }
 
     /**

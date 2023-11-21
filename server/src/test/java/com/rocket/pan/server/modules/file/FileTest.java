@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.google.common.collect.Lists;
 import com.rocket.pan.core.exception.RPanBusinessException;
 import com.rocket.pan.core.utils.IdUtil;
-import com.rocket.pan.server.RPanServerLauncher;
+import com.rocket.pan.RPanServerLauncher;
 import com.rocket.pan.server.modules.file.context.*;
 import com.rocket.pan.server.modules.file.entity.RPanFile;
 import com.rocket.pan.server.modules.file.entity.RPanFileChunk;
@@ -714,6 +714,7 @@ public class FileTest {
         copyFileContext.setFileIdList(Lists.newArrayList(folder1));
         copyFileContext.setUserId(userId);
         iUserFileService.copy(copyFileContext);
+
     }
 
     /**

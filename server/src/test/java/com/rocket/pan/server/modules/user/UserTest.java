@@ -2,7 +2,7 @@ package com.rocket.pan.server.modules.user;
 
 import cn.hutool.core.lang.Assert;
 import com.rocket.pan.core.exception.RPanBusinessException;
-import com.rocket.pan.server.RPanServerLauncher;
+import com.rocket.pan.RPanServerLauncher;
 import com.rocket.pan.server.modules.user.constants.UserConstants;
 import com.rocket.pan.server.modules.user.context.*;
 import com.rocket.pan.server.modules.user.service.IUserService;

@@ -55,7 +55,7 @@ public class UserController {
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE
     )
-    @PostMapping("login")
+    @PostMapping("/login")
     public R login(@Validated @RequestBody UserLoginPO userLoginPO) {
         UserLoginContext userLoginContext = userConverter.userLoginPO2UserLoginContext(userLoginPO);
         String accessToken = iUserService.login(userLoginContext);
@@ -68,7 +68,7 @@ public class UserController {
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE
     )
-    @PostMapping("exit")
+    @PostMapping("/exit")
     public R exit() {
         iUserService.exit(UserIdUtil.get());
         return R.success();
@@ -81,7 +81,7 @@ public class UserController {
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE
     )
     @LoginIgnore
-    @PostMapping("username/check")
+    @PostMapping("/username/check")
     public R checkUsername(@Validated @RequestBody CheckUsernamePO checkUsernamePO) {
         CheckUsernameContext checkUsernameContext = userConverter.checkUsernamePO2CheckUsernameContext(checkUsernamePO);
         String question = iUserService.checkUsername(checkUsernameContext);
@@ -96,7 +96,7 @@ public class UserController {
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE
     )
     @LoginIgnore
-    @PostMapping("answer/check")
+    @PostMapping("/answer/check")
     public R checkAnswer(@Validated @RequestBody CheckAnswerPO checkAnswerPO) {
         CheckAnswerContext checkAnswerContext = userConverter.checkAnswerPO2CheckAnswerContext(checkAnswerPO);
         String token = iUserService.checkAnswer(checkAnswerContext);
@@ -109,7 +109,7 @@ public class UserController {
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE
     )
-    @PostMapping("password/reset")
+    @PostMapping("/password/reset")
     @LoginIgnore
     public R resetPassword(@Validated @RequestBody ResetPasswordPO resetPasswordPO) {
         ResetPasswordContext resetPasswordContext = userConverter.resetPasswordPO2ResetPasswordContext(resetPasswordPO);
@@ -123,7 +123,7 @@ public class UserController {
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE
     )
-    @PostMapping("password/change")
+    @PostMapping("/password/change")
     public R changePassword(@Validated @RequestBody ChangePasswordPO changePasswordPO) {
         ChangePasswordContext changePasswordContext = userConverter.changePasswordPO2ChangePasswordContext(changePasswordPO);
         changePasswordContext.setUserId(UserIdUtil.get());

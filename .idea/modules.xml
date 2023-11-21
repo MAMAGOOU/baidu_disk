@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/framework/cache/r-pan-cache.iml" filepath="$PROJECT_DIR$/framework/cache/r-pan-cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/cache/cache-caffeine/r-pan-cache-caffeine.iml" filepath="$PROJECT_DIR$/framework/cache/cache-caffeine/r-pan-cache-caffeine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/cache/cache-core/r-pan-cache-core.iml" filepath="$PROJECT_DIR$/framework/cache/cache-core/r-pan-cache-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/cache/cache-redis/r-pan-cache-redis.iml" filepath="$PROJECT_DIR$/framework/cache/cache-redis/r-pan-cache-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/core/r-pan-core.iml" filepath="$PROJECT_DIR$/framework/core/r-pan-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/distribution/r-pan-distribution.iml" filepath="$PROJECT_DIR$/distribution/r-pan-distribution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/r-pan-framework.iml" filepath="$PROJECT_DIR$/framework/r-pan-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/orm/mybatis-plus/r-pan-mybatis-plus.iml" filepath="$PROJECT_DIR$/framework/orm/mybatis-plus/r-pan-mybatis-plus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/orm/r-pan-orm.iml" filepath="$PROJECT_DIR$/framework/orm/r-pan-orm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/r-pan-parent.iml" filepath="$PROJECT_DIR$/r-pan-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/schedule/r-pan-schedule.iml" filepath="$PROJECT_DIR$/framework/schedule/r-pan-schedule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server/r-pan-server.iml" filepath="$PROJECT_DIR$/server/r-pan-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/storage-engine/r-pan-storage-engine.iml" filepath="$PROJECT_DIR$/framework/storage-engine/r-pan-storage-engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/storage-engine/storage-engine-core/r-pan-storage-engine-core.iml" filepath="$PROJECT_DIR$/framework/storage-engine/storage-engine-core/r-pan-storage-engine-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/storage-engine/storage-engine-fastdfs/r-pan-storage-engine-fastdfs.iml" filepath="$PROJECT_DIR$/framework/storage-engine/storage-engine-fastdfs/r-pan-storage-engine-fastdfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/storage-engine/storage-engine-local/r-pan-storage-engine-local.iml" filepath="$PROJECT_DIR$/framework/storage-engine/storage-engine-local/r-pan-storage-engine-local.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/storage-engine/storage-engine-oss/r-pan-storage-engine-oss.iml" filepath="$PROJECT_DIR$/framework/storage-engine/storage-engine-oss/r-pan-storage-engine-oss.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/swagger2/r-pan-swagger2.iml" filepath="$PROJECT_DIR$/framework/swagger2/r-pan-swagger2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/web/r-pan-web.iml" filepath="$PROJECT_DIR$/framework/web/r-pan-web.iml" />
+    </modules>
+  </component>
+</project>

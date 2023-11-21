@@ -46,3 +46,13 @@ swagger2:
   contact-email: 1975015544@qq.com
   version: 1.0
 
+com:
+  rocket:
+    pan:
+      storage:
+        engine:
+          fdfs:
+            connect-timeout: 600
+            tracker-list:
+              - 39.99.156.23:22122
+            group: group1

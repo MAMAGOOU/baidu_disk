@@ -1,9 +1,9 @@
 package com.rocket.pan.server.modules.file.controller;
 
-import cn.hutool.core.util.ObjectUtil;
 import com.google.common.base.Splitter;
 import com.rocket.pan.core.constants.RPanConstants;
 import com.rocket.pan.core.response.R;
+import com.rocket.pan.core.utils.SpringContextUtil;
 import com.rocket.pan.server.common.utils.UserIdUtil;
 import com.rocket.pan.server.modules.file.constants.FileConstants;
 import com.rocket.pan.server.modules.file.context.*;
@@ -12,11 +12,17 @@ import com.rocket.pan.server.modules.file.enums.DelFlagEnum;
 import com.rocket.pan.server.modules.file.po.*;
 import com.rocket.pan.server.modules.file.service.IUserFileService;
 import com.rocket.pan.server.modules.file.vo.*;
-import com.rocket.pan.server.modules.user.service.IUserService;
 import com.rocket.pan.core.utils.IdUtil;
+
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +31,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.stream.Collectors;
 
 /**
@@ -36,15 +40,16 @@ import java.util.stream.Collectors;
  * @version 1.0
  */
 @RestController
+@Validated
+@Api(tags = "文件模块")
 public class FileController {
-    @Autowired
-    private IUserService iUserService;
 
     @Autowired
     private IUserFileService iUserFileService;
 
     @Autowired
     private FileConverter fileConverter;
+
 
     @ApiOperation(
             value = "查看文件列表",
@@ -57,12 +62,18 @@ public class FileController {
                                          @RequestParam(value = "fileTypes", required = false,
                                                  defaultValue = FileConstants.ALL_FILE_TYPE) String fileTypes) {
         Long realParentId = -1L;
-        Long readFileId = IdUtil.decrypt(parentId);
-        List<Integer> fileTypeArray = null;
-        // 如果不是查询文件夹，那么我们进行切割
-        if (ObjectUtil.equal(FileConstants.ALL_FILE_TYPE, fileTypes)) {
-            fileTypeArray = Splitter.on(RPanConstants.COMMON_SEPARATOR).splitToList(fileTypes).stream().map(Integer::valueOf).collect(Collectors.toList());
+        // 对父文件Id进行解密
+        if (!FileConstants.ALL_FILE_TYPE.equals(parentId)) {
+            realParentId = IdUtil.decrypt(parentId);
         }
+        // 文件类型数组
+        List<Integer> fileTypeArray = null;
+        // 将文件类型数组字符串转为文件类型集合
+        if (!Objects.equals(FileConstants.ALL_FILE_TYPE, fileTypes)) {
+            fileTypeArray = Splitter.on(RPanConstants.COMMON_SEPARATOR).splitToList(fileTypes)
+                    .stream().map(Integer::valueOf).collect(Collectors.toList());
+        }
+        // 查询文件列表上下文
         QueryFileListContext context = new QueryFileListContext();
         context.setParentId(realParentId);
         context.setFileTypeArray(fileTypeArray);
@@ -70,8 +81,12 @@ public class FileController {
         context.setUserId(UserIdUtil.get());
         // DelFlagEnum，文件是否删除枚举类，0 未删除 1 已删除
         context.setDelFlag(DelFlagEnum.NO.getCode());
+
         // 进行文件列表条件查询
-        List<RPanUserFileVO> result = iUserFileService.getFileList(context);
+        IUserFileService userFileService = SpringContextUtil.getBean(IUserFileService.class);
+        // List<RPanUserFileVO> result = iUserFileService.getFileList(context);
+        System.out.println();
+        List<RPanUserFileVO> result = userFileService.getFileList(context);
         return R.data(result);
     }
 
@@ -310,4 +325,5 @@ public class FileController {
         List<BreadcrumbVO> result = iUserFileService.getBreadcrumbs(context);
         return R.data(result);
     }
+
 }

@@ -95,15 +95,18 @@ public class CommonLoginAspect {
         if (StrUtil.isBlank(accessToken)) {
             accessToken = request.getParameter(LOGIN_AUTH_PARAM_NAME);
         }
+
         if (StrUtil.isBlank(accessToken)) {
             return false;
         }
+
         Object userId = JwtUtil.analyzeToken(accessToken, UserConstants.LOGIN_USER_ID);
         if (ObjectUtil.isNull(userId)) {
             return false;
         }
+
         Cache cache = cacheManager.getCache(CacheConstants.R_PAN_CACHE_NAME);
-        Object redisAccessToken = cache.get(UserConstants.USER_LOGIN_PREFIX + userId);
+        String redisAccessToken = cache.get(UserConstants.USER_LOGIN_PREFIX + userId, String.class);
         if (ObjectUtil.isNull(redisAccessToken)) {
             return false;
         }

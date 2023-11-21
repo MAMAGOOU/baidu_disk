@@ -35,14 +35,29 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="r-pan" target="11" />
-      <module name="r-pan-storage-engin-local" target="11" />
-      <module name="r-rocket-schedule" target="11" />
+      <module name="r-pan-cache" target="11" />
+      <module name="r-pan-cache-caffeine" target="11" />
+      <module name="r-pan-cache-core" target="11" />
+      <module name="r-pan-cache-redis" target="11" />
+      <module name="r-pan-core" target="11" />
+      <module name="r-pan-distribution" target="11" />
+      <module name="r-pan-framework" target="11" />
+      <module name="r-pan-mybatis-plus" target="11" />
+      <module name="r-pan-orm" target="11" />
+      <module name="r-pan-parent" target="11" />
+      <module name="r-pan-schedule" target="11" />
+      <module name="r-pan-server" target="11" />
+      <module name="r-pan-storage-engine" target="11" />
+      <module name="r-pan-storage-engine-core" target="11" />
+      <module name="r-pan-storage-engine-fastdfs" target="11" />
+      <module name="r-pan-storage-engine-local" target="11" />
+      <module name="r-pan-storage-engine-oss" target="11" />
+      <module name="r-pan-swagger2" target="11" />
+      <module name="r-pan-web" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="r-pan" options="-parameters" />
       <module name="r-pan-cache" options="-parameters" />
       <module name="r-pan-cache-caffeine" options="-parameters" />
       <module name="r-pan-cache-core" options="-parameters" />
@@ -55,7 +70,6 @@
       <module name="r-pan-parent" options="-parameters" />
       <module name="r-pan-schedule" options="-parameters" />
       <module name="r-pan-server" options="-parameters" />
-      <module name="r-pan-storage-engin-local" options="-parameters" />
       <module name="r-pan-storage-engine" options="-parameters" />
       <module name="r-pan-storage-engine-core" options="-parameters" />
       <module name="r-pan-storage-engine-fastdfs" options="-parameters" />
@@ -63,7 +77,6 @@
       <module name="r-pan-storage-engine-oss" options="-parameters" />
       <module name="r-pan-swagger2" options="-parameters" />
       <module name="r-pan-web" options="-parameters" />
-      <module name="r-rocket-schedule" options="-parameters" />
     </option>
   </component>
 </project>

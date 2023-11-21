@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BeansEndpointTabSettings">
+    <option name="showLibraryBeans" value="false" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3dafc43e-8164-4ca7-9bf0-2b66095f26a5" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://C:/Program Files/Java/jdk-11.0.18/lib/src.zip!/java.base/java/util/concurrent/locks/AbstractQueuedSynchronizer.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://C:/Program Files/Java/jdk-11.0.18/lib/src.zip!/java.base/java/util/concurrent/locks/Condition.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Program Files/maven" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="D:\Program Files\maven\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2XiVmmYmpCI2Q6EUamSnUidjNiQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/tianji/tianji&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.12890625&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.16292137&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;ec744f123876a383e1b492b47efaea78&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ],
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;MySQL&quot;
+    ]
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\myDesign\r-pan\framework\storage-engine\storage-engine-fastdfs\src\main\resources" />
+      <recent name="E:\myDesign\r-pan\server\src\main\java\com\rocket\pan\server\common\utils" />
+      <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers\share" />
+      <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers\file" />
+      <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers\log" />
+      <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers\file" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.rocket.pan" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.RPanServerLauncher">
+    <configuration name="FileTest.testCopyFileFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="r-pan-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
+      <option name="METHOD_NAME" value="testCopyFileFail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTest.testCopyFileSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="r-pan-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
+      <option name="METHOD_NAME" value="testCopyFileSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTest.testGetBreadcrumbsSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="r-pan-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
+      <option name="METHOD_NAME" value="testGetBreadcrumbsSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTest.testQueryUserFileListSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="r-pan-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
+      <option name="METHOD_NAME" value="testQueryUserFileListSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTest.testSearchSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="r-pan-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
+      <option name="METHOD_NAME" value="testSearchSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RPanServerLauncher" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="r-pan-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rocket.pan.RPanServerLauncher" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FileTest.testQueryUserFileListSuccess" />
+        <item itemvalue="JUnit.FileTest.testGetBreadcrumbsSuccess" />
+        <item itemvalue="JUnit.FileTest.testSearchSuccess" />
+        <item itemvalue="JUnit.FileTest.testCopyFileFail" />
+        <item itemvalue="JUnit.FileTest.testCopyFileSuccess" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBootOptions">
+    <option name="showAdditionalConfigNotification" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3dafc43e-8164-4ca7-9bf0-2b66095f26a5" name="Changes" comment="" />
+      <created>1699112048879</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699112048879</updated>
+      <workItem from="1699112050005" duration="235000" />
+      <workItem from="1699114576862" duration="451000" />
+      <workItem from="1699115046669" duration="1498000" />
+      <workItem from="1699143753985" duration="10841000" />
+      <workItem from="1699283763644" duration="605000" />
+      <workItem from="1699284404483" duration="78000" />
+      <workItem from="1699545543098" duration="6739000" />
+      <workItem from="1699552804828" duration="1344000" />
+      <workItem from="1699577086105" duration="4881000" />
+      <workItem from="1699596524646" duration="1995000" />
+      <workItem from="1699616381348" duration="595000" />
+      <workItem from="1699619391450" duration="113000" />
+      <workItem from="1699619515162" duration="130000" />
+      <workItem from="1699619659880" duration="944000" />
+      <workItem from="1699623574847" duration="1004000" />
+      <workItem from="1699627547852" duration="3017000" />
+      <workItem from="1699631806555" duration="7728000" />
+      <workItem from="1699662704243" duration="344000" />
+      <workItem from="1699663486985" duration="4062000" />
+      <workItem from="1699682952134" duration="2305000" />
+      <workItem from="1699713944722" duration="2538000" />
+      <workItem from="1699717114372" duration="8407000" />
+      <workItem from="1699726653377" duration="591000" />
+      <workItem from="1699753395287" duration="645000" />
+      <workItem from="1699755106639" duration="1919000" />
+      <workItem from="1699762420423" duration="143000" />
+      <workItem from="1699769626322" duration="385000" />
+      <workItem from="1699774703025" duration="1802000" />
+      <workItem from="1699779946291" duration="595000" />
+      <workItem from="1699790473083" duration="16629000" />
+      <workItem from="1699839231259" duration="90000" />
+      <workItem from="1699861894681" duration="25000" />
+      <workItem from="1699862042311" duration="77000" />
+      <workItem from="1699875157106" duration="579000" />
+      <workItem from="1699875750994" duration="179000" />
+      <workItem from="1699877174091" duration="10000" />
+      <workItem from="1699877198512" duration="1013000" />
+      <workItem from="1699878221754" duration="2463000" />
+      <workItem from="1699882344107" duration="1157000" />
+      <workItem from="1699885316103" duration="3478000" />
+      <workItem from="1699889784580" duration="6900000" />
+      <workItem from="1699926273455" duration="9327000" />
+      <workItem from="1699948937254" duration="202000" />
+      <workItem from="1699952543740" duration="1958000" />
+      <workItem from="1699954534799" duration="16619000" />
+      <workItem from="1699980234001" duration="6788000" />
+      <workItem from="1700014889580" duration="1231000" />
+      <workItem from="1700029736539" duration="598000" />
+      <workItem from="1700044754053" duration="1000" />
+      <workItem from="1700047652468" duration="6618000" />
+      <workItem from="1700059160578" duration="2986000" />
+      <workItem from="1700065511370" duration="6359000" />
+      <workItem from="1700093837637" duration="4529000" />
+      <workItem from="1700118214695" duration="68000" />
+      <workItem from="1700119970909" duration="315000" />
+      <workItem from="1700121816785" duration="127000" />
+      <workItem from="1700125369863" duration="15947000" />
+      <workItem from="1700181714037" duration="17608000" />
+      <workItem from="1700237441611" duration="290000" />
+      <workItem from="1700289778081" duration="74000" />
+      <workItem from="1700290541685" duration="1460000" />
+      <workItem from="1700294310125" duration="1214000" />
+      <workItem from="1700297398894" duration="62000" />
+      <workItem from="1700371096311" duration="597000" />
+      <workItem from="1700372744995" duration="6967000" />
+      <workItem from="1700381703537" duration="953000" />
+      <workItem from="1700395473742" duration="1426000" />
+      <workItem from="1700439385835" duration="4000" />
+      <workItem from="1700452828508" duration="4619000" />
+      <workItem from="1700490608242" duration="44000" />
+      <workItem from="1700490679798" duration="2683000" />
+      <workItem from="1700493718145" duration="604000" />
+      <workItem from="1700527651528" duration="69000" />
+      <workItem from="1700575514933" duration="4380000" />
+      <workItem from="1700581497662" duration="1716000" />
+    </task>
+    <task id="LOCAL-00001" summary="文件复制，上一次提交的功能是文件批量转移">
+      <created>1700181912990</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700181912990</updated>
+    </task>
+    <task id="LOCAL-00002" summary="文件搜索、查询面包屑列表">
+      <created>1700208389850</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700208389850</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="文件复制，上一次提交的功能是文件批量转移" />
+    <MESSAGE value="文件搜索、查询面包屑列表" />
+    <option name="LAST_COMMIT_MESSAGE" value="文件搜索、查询面包屑列表" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/user/service/impl/UserServiceImpl.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/test/java/com/rocket/pan/server/modules/file/FileTest.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/test/java/com/rocket/pan/server/modules/file/FileTest.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/file/controller/FileController.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/file/controller/FileController.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/file/service/impl/UserFileServiceImpl.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/file/controller/FileController.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/file/controller/FileController.java</url>
+          <line>175</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

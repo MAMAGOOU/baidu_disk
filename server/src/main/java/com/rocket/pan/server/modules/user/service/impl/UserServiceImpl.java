@@ -36,8 +36,7 @@ import java.util.Date;
  * @createDate 2023-11-11 14:36:21
  */
 @Service("userService")
-public class UserServiceImpl extends ServiceImpl<RPanUserMapper, RPanUser>
-        implements IUserService {
+public class UserServiceImpl extends ServiceImpl<RPanUserMapper, RPanUser> implements IUserService {
 
     @Autowired
     private UserConverter userConverter;

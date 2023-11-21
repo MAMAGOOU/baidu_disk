@@ -51,9 +51,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.rocket.pan</groupId>-->
+<!--            <artifactId>r-pan-storage-engine-local</artifactId>-->
+<!--            <version>1.0</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.rocket.pan</groupId>
-            <artifactId>r-pan-storage-engine-local</artifactId>
+            <artifactId>r-pan-storage-engine-fastdfs</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
@@ -116,7 +121,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.rocket.pan.server.RPanServerLauncher</mainClass>
+                    <mainClass>com.rocket.pan.RPanServerLauncher</mainClass>
                     <layout>ZIP</layout>
                 </configuration>
                 <executions>

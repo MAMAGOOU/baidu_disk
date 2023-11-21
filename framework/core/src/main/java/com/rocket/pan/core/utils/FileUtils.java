@@ -39,6 +39,7 @@ public class FileUtils {
 
     /**
      * 获取文件的类型
+     * 不能使用魔法数字
      *
      * @param filename
      * @return
