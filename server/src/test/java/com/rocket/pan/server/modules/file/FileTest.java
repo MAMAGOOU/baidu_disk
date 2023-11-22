@@ -421,11 +421,10 @@ public class FileTest {
     public void uploadWithChunkTest() throws InterruptedException {
         Long userId = register();
         UserInfoVO userInfoVO = info(userId);
-        // 信号量工具类
+
         CountDownLatch countDownLatch = new CountDownLatch(10);
         for (int i = 0; i < 10; i++) {
-            new ChunkUploader(countDownLatch, i + 1, 10, iUserFileService, userId, userInfoVO.getRootFileId())
-                    .start();
+            new ChunkUploader(countDownLatch, i + 1, 10, iUserFileService, userId, userInfoVO.getRootFileId()).start();
         }
         countDownLatch.await();
     }
@@ -461,7 +460,7 @@ public class FileTest {
         public void run() {
             super.run();
             MultipartFile file = genarateMultipartFile();
-            long totalSize = file.getSize() * chunks;
+            Long totalSize = file.getSize() * chunks;
             String filename = "test.txt";
             String identifier = "123456789";
 
@@ -492,9 +491,7 @@ public class FileTest {
             } else {
                 countDownLatch.countDown();
             }
-
         }
-
     }
 
     /**

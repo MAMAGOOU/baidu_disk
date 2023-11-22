@@ -22,6 +22,15 @@
             <artifactId>r-pan-storage-engine-core</artifactId>
             <version>1.0</version>
         </dependency>
+        <!--阿里OSS依赖-->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

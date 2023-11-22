@@ -58,9 +58,9 @@ public class FileController {
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE
     )
     @GetMapping("/files")
-    private R<List<RPanUserFileVO>> list(@NotBlank(message = "父文件夹ID不可以为空") @RequestParam(value = "parentId", required = false) String parentId,
-                                         @RequestParam(value = "fileTypes", required = false,
-                                                 defaultValue = FileConstants.ALL_FILE_TYPE) String fileTypes) {
+    public R<List<RPanUserFileVO>> list(@NotBlank(message = "父文件夹ID不可以为空") @RequestParam(value = "parentId", required = false) String parentId,
+                                        @RequestParam(value = "fileTypes", required = false,
+                                                defaultValue = FileConstants.ALL_FILE_TYPE) String fileTypes) {
         Long realParentId = -1L;
         // 对父文件Id进行解密
         if (!FileConstants.ALL_FILE_TYPE.equals(parentId)) {
@@ -83,10 +83,10 @@ public class FileController {
         context.setDelFlag(DelFlagEnum.NO.getCode());
 
         // 进行文件列表条件查询
-        IUserFileService userFileService = SpringContextUtil.getBean(IUserFileService.class);
-        // List<RPanUserFileVO> result = iUserFileService.getFileList(context);
+        //IUserFileService userFileService = SpringContextUtil.getBean(IUserFileService.class);
+        List<RPanUserFileVO> result = iUserFileService.getFileList(context);
         System.out.println();
-        List<RPanUserFileVO> result = userFileService.getFileList(context);
+        //List<RPanUserFileVO> result = userFileService.getFileList(context);
         return R.data(result);
     }
 

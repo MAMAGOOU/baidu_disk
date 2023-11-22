@@ -51,54 +51,57 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/tianji/tianji&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.12890625&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.16292137&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;ec744f123876a383e1b492b47efaea78&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "E:/myDesign/r-pan/framework/storage-engine/storage-engine-oss/src/main/resources/META-INF",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.12890625",
+    "project.structure.side.proportion": "0.16292137",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
+    "spring.configuration.checksum": "ec744f123876a383e1b492b47efaea78",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;module&quot;,
-      &quot;repository&quot;
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;MySQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.rocket.pan.storage.engine.oss" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\myDesign\r-pan\framework\storage-engine\storage-engine-oss\src\main\resources\META-INF" />
       <recent name="E:\myDesign\r-pan\framework\storage-engine\storage-engine-fastdfs\src\main\resources" />
       <recent name="E:\myDesign\r-pan\server\src\main\java\com\rocket\pan\server\common\utils" />
       <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers\share" />
       <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers\file" />
-      <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers\log" />
@@ -109,38 +112,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.RPanServerLauncher">
-    <configuration name="FileTest.testCopyFileFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="r-pan-server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
-      <option name="METHOD_NAME" value="testCopyFileFail" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileTest.testCopyFileSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="r-pan-server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
-      <option name="METHOD_NAME" value="testCopyFileSuccess" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FileTest.testGetBreadcrumbsSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="r-pan-server" />
       <extension name="coverage">
@@ -189,6 +160,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FileTest.testUploadSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="r-pan-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
+      <option name="METHOD_NAME" value="testUploadSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTest.uploadWithChunkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="r-pan-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
+      <option name="METHOD_NAME" value="uploadWithChunkTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RPanServerLauncher" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="r-pan-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rocket.pan.RPanServerLauncher" />
@@ -198,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FileTest.uploadWithChunkTest" />
+        <item itemvalue="JUnit.FileTest.testUploadSuccess" />
         <item itemvalue="JUnit.FileTest.testQueryUserFileListSuccess" />
         <item itemvalue="JUnit.FileTest.testGetBreadcrumbsSuccess" />
         <item itemvalue="JUnit.FileTest.testSearchSuccess" />
-        <item itemvalue="JUnit.FileTest.testCopyFileFail" />
-        <item itemvalue="JUnit.FileTest.testCopyFileSuccess" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +294,8 @@
       <workItem from="1700493718145" duration="604000" />
       <workItem from="1700527651528" duration="69000" />
       <workItem from="1700575514933" duration="4380000" />
-      <workItem from="1700581497662" duration="1716000" />
+      <workItem from="1700581497662" duration="6749000" />
+      <workItem from="1700617933147" duration="12637000" />
     </task>
     <task id="LOCAL-00001" summary="文件复制，上一次提交的功能是文件批量转移">
       <created>1700181912990</created>
@@ -336,31 +340,6 @@
           <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/user/service/impl/UserServiceImpl.java</url>
           <line>93</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/test/java/com/rocket/pan/server/modules/file/FileTest.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/test/java/com/rocket/pan/server/modules/file/FileTest.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/file/controller/FileController.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/file/controller/FileController.java</url>
-          <line>87</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/file/service/impl/UserFileServiceImpl.java</url>
-          <line>120</line>
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/file/controller/FileController.java</url>

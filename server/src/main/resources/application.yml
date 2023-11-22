@@ -51,8 +51,15 @@ com:
     pan:
       storage:
         engine:
-          fdfs:
-            connect-timeout: 600
-            tracker-list:
-              - 39.99.156.23:22122
-            group: group1
+          oss:
+            bucket-name: file-upload-r-pan-23
+            endpoint: oss-cn-zhangjiakou.aliyuncs.com
+            access-key-id: LTAI5tLE3TrjDZwStgattDmF
+            access-key-secret: s3FlnD8dGPTss937NbRciyBZM6Rvz3
+            auto-create-bucket: true
+#          fdfs:
+#            connect-timeout: 600
+#            tracker-list:
+#              - 39.99.156.23:22122
+#            group: group1
+

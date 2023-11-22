@@ -15,6 +15,7 @@
         <version>2.2.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.rocket.pan</groupId>
     <artifactId>r-pan-parent</artifactId>
     <version>1.0</version>
