@@ -46,17 +46,17 @@ swagger2:
   contact-email: 1975015544@qq.com
   version: 1.0
 
-com:
-  rocket:
-    pan:
-      storage:
-        engine:
-          oss:
-            bucket-name: file-upload-r-pan-23
-            endpoint: oss-cn-zhangjiakou.aliyuncs.com
-            access-key-id: LTAI5tLE3TrjDZwStgattDmF
-            access-key-secret: s3FlnD8dGPTss937NbRciyBZM6Rvz3
-            auto-create-bucket: true
+#com:
+#  rocket:
+#    pan:
+#      storage:
+#        engine:
+#          oss:
+#            bucket-name: file-upload-r-pan-23
+#            endpoint: oss-cn-zhangjiakou.aliyuncs.com
+#            access-key-id: LTAI5tLE3TrjDZwStgattDmF
+#            access-key-secret: s3FlnD8dGPTss937NbRciyBZM6Rvz3
+#            auto-create-bucket: true
 #          fdfs:
 #            connect-timeout: 600
 #            tracker-list:

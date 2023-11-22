@@ -52,11 +52,11 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <!--本地存储引擎-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.rocket.pan</groupId>-->
-        <!--            <artifactId>r-pan-storage-engine-local</artifactId>-->
-        <!--            <version>1.0</version>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.rocket.pan</groupId>
+            <artifactId>r-pan-storage-engine-local</artifactId>
+            <version>1.0</version>
+        </dependency>
         <!--FastDFS存储引擎-->
         <!--        <dependency>-->
         <!--            <groupId>com.rocket.pan</groupId>-->
@@ -64,11 +64,11 @@
         <!--            <version>1.0</version>-->
         <!--        </dependency>-->
         <!--阿里OSS存储引擎-->
-        <dependency>
-            <groupId>com.rocket.pan</groupId>
-            <artifactId>r-pan-storage-engine-oss</artifactId>
-            <version>1.0</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>com.rocket.pan</groupId>-->
+        <!--            <artifactId>r-pan-storage-engine-oss</artifactId>-->
+        <!--            <version>1.0</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>

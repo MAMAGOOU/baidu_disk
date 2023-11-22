@@ -1,9 +1,6 @@
 package com.rocket.pan.server.common.event.log;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.context.ApplicationEvent;
 
 /**
