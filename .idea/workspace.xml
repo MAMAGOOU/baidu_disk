@@ -19,8 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -62,7 +63,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/myDesign/r-pan/framework/storage-engine/storage-engine-oss/src/main/resources/META-INF&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/myDesign/r-pan/server/src/main/java/com/rocket/pan/server/modules/enums&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -71,7 +72,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.12890625&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.16292137&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;ec744f123876a383e1b492b47efaea78&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -97,11 +98,11 @@
       <recent name="com.rocket.pan.storage.engine.oss" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\myDesign\r-pan\server\src\main\java\com\rocket\pan\server\modules\enums" />
       <recent name="E:\myDesign\r-pan\framework\storage-engine\storage-engine-oss\src\main\resources\META-INF" />
       <recent name="E:\myDesign\r-pan\framework\storage-engine\storage-engine-fastdfs\src\main\resources" />
       <recent name="E:\myDesign\r-pan\server\src\main\java\com\rocket\pan\server\common\utils" />
       <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers\share" />
-      <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers\file" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers\log" />
@@ -110,83 +111,86 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.rocket.pan" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.rocket.pan.server.common.event.test" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.RecycleTest.testFileDeleteSuccess">
-    <configuration name="RecycleTest.testFileDeleteFailByWrongUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.RPanServerLauncher">
+    <configuration name="ShareTest.checkShareCodeFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="r-pan-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.recycle.*" />
+          <option name="PATTERN" value="com.rocket.pan.server.modules.share.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.recycle" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.recycle.RecycleTest" />
-      <option name="METHOD_NAME" value="testFileDeleteFailByWrongUserId" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.share" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.share.ShareTest" />
+      <option name="METHOD_NAME" value="checkShareCodeFail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecycleTest.testFileDeleteSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ShareTest.checkShareCodeSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="r-pan-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.recycle.*" />
+          <option name="PATTERN" value="com.rocket.pan.server.modules.share.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.recycle" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.recycle.RecycleTest" />
-      <option name="METHOD_NAME" value="testFileDeleteSuccess" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.share" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.share.ShareTest" />
+      <option name="METHOD_NAME" value="checkShareCodeSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecycleTest.testFileRestoreFailByWrongFilename1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ShareTest.queryShareDetailSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="r-pan-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.recycle.*" />
+          <option name="PATTERN" value="com.rocket.pan.server.modules.share.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.recycle" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.recycle.RecycleTest" />
-      <option name="METHOD_NAME" value="testFileRestoreFailByWrongFilename1" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.share" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.share.ShareTest" />
+      <option name="METHOD_NAME" value="queryShareDetailSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecycleTest.testFileRestoreFailByWrongFilename2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ShareTest.queryShareFileListSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="r-pan-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.recycle.*" />
+          <option name="PATTERN" value="com.rocket.pan.server.modules.share.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.recycle" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.recycle.RecycleTest" />
-      <option name="METHOD_NAME" value="testFileRestoreFailByWrongFilename2" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.share" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.share.ShareTest" />
+      <option name="METHOD_NAME" value="queryShareFileListSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecycleTest.testFileRestoreFailByWrongUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ShareTest.queryShareSimpleDetailSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="r-pan-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.recycle.*" />
+          <option name="PATTERN" value="com.rocket.pan.server.modules.share.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.recycle" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.recycle.RecycleTest" />
-      <option name="METHOD_NAME" value="testFileRestoreFailByWrongUserId" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.share" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.share.ShareTest" />
+      <option name="METHOD_NAME" value="queryShareSimpleDetailSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -201,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RecycleTest.testFileDeleteSuccess" />
-        <item itemvalue="JUnit.RecycleTest.testFileDeleteFailByWrongUserId" />
-        <item itemvalue="JUnit.RecycleTest.testFileRestoreFailByWrongFilename2" />
-        <item itemvalue="JUnit.RecycleTest.testFileRestoreFailByWrongFilename1" />
-        <item itemvalue="JUnit.RecycleTest.testFileRestoreFailByWrongUserId" />
+        <item itemvalue="JUnit.ShareTest.queryShareFileListSuccess" />
+        <item itemvalue="JUnit.ShareTest.queryShareSimpleDetailSuccess" />
+        <item itemvalue="JUnit.ShareTest.queryShareDetailSuccess" />
+        <item itemvalue="JUnit.ShareTest.checkShareCodeFail" />
+        <item itemvalue="JUnit.ShareTest.checkShareCodeSuccess" />
       </list>
     </recent_temporary>
   </component>
@@ -298,6 +302,11 @@
       <workItem from="1700617933147" duration="22088000" />
       <workItem from="1700663873004" duration="3112000" />
       <workItem from="1700668290041" duration="3917000" />
+      <workItem from="1700703617419" duration="8554000" />
+      <workItem from="1700712638734" duration="334000" />
+      <workItem from="1700721821500" duration="11958000" />
+      <workItem from="1700738411010" duration="11863000" />
+      <workItem from="1700755731847" duration="4006000" />
     </task>
     <task id="LOCAL-00001" summary="文件复制，上一次提交的功能是文件批量转移">
       <created>1700181912990</created>
@@ -313,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700208389850</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="回收站模块开发">
+      <created>1700703696319</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700703696319</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +349,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="文件复制，上一次提交的功能是文件批量转移" />
     <MESSAGE value="文件搜索、查询面包屑列表" />
-    <option name="LAST_COMMIT_MESSAGE" value="文件搜索、查询面包屑列表" />
+    <MESSAGE value="回收站模块开发" />
+    <option name="LAST_COMMIT_MESSAGE" value="回收站模块开发" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -352,6 +369,11 @@
           <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/file/controller/FileController.java</url>
           <line>175</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/com/rocket/pan/server/modules/test/controller/TestController.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

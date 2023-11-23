@@ -19,7 +19,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.event.TransactionalEventListener;
 
 import java.io.IOException;
 import java.util.List;
@@ -62,6 +64,7 @@ public class FilePhysicalDeleteEventListener implements ApplicationContextAware 
      * @param event
      */
     @EventListener(classes = FilePhysicalDeleteEvent.class)
+    @TransactionalEventListener
     @Async(value = "eventListenerTaskExecutor")
     public void physicalDeleteFile(FilePhysicalDeleteEvent event) {
         List<RPanUserFile> allRecords = event.getAllRecords();

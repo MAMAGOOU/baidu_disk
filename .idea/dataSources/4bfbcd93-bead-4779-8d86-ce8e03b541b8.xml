@@ -1216,8 +1216,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="351" parent="342" name="log_content">
       <Comment>日志内容</Comment>
-      <DasType>varchar(900)|0s</DasType>
-      <DefaultExpression>&apos;&apos;</DefaultExpression>
+      <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
@@ -1342,7 +1341,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="371" parent="344" name="id">
-      <AutoIncrement>162</AutoIncrement>
+      <AutoIncrement>203</AutoIncrement>
       <Comment>主键</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1506,7 +1505,7 @@ create_time</ColNames>
       <UnderlyingIndexName>uk_create_user_time</UnderlyingIndexName>
     </key>
     <column id="397" parent="346" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <Comment>主键</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>

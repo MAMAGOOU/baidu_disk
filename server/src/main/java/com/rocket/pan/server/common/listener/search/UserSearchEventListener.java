@@ -32,6 +32,7 @@ public class UserSearchEventListener {
      * @param event
      */
     @EventListener(classes = UserSearchEvent.class)
+    @Async
     public void saveSearchHistory(UserSearchEvent event) {
         RPanUserSearchHistory record = new RPanUserSearchHistory();
 

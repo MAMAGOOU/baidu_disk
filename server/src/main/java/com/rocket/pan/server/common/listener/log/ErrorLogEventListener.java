@@ -6,6 +6,7 @@ import com.rocket.pan.server.modules.log.entity.RPanErrorLog;
 import com.rocket.pan.server.modules.log.service.IErrorLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -27,6 +28,7 @@ public class ErrorLogEventListener {
      * @param event
      */
     @EventListener(ErrorLogEvent.class)
+    @Async
     public void saveErrorLog(ErrorLogEvent event) {
         RPanErrorLog record = new RPanErrorLog();
         record.setId(IdUtil.get());

@@ -5,17 +5,17 @@
 <mapper namespace="com.rocket.pan.server.modules.share.mapper.RPanShareMapper">
 
     <resultMap id="BaseResultMap" type="com.rocket.pan.server.modules.share.entity.RPanShare">
-            <id property="share_id" column="share_id" jdbcType="BIGINT"/>
-            <result property="share_name" column="share_name" jdbcType="VARCHAR"/>
-            <result property="share_type" column="share_type" jdbcType="TINYINT"/>
-            <result property="share_day_type" column="share_day_type" jdbcType="TINYINT"/>
-            <result property="share_day" column="share_day" jdbcType="TINYINT"/>
-            <result property="share_end_time" column="share_end_time" jdbcType="TIMESTAMP"/>
-            <result property="share_url" column="share_url" jdbcType="VARCHAR"/>
-            <result property="share_code" column="share_code" jdbcType="VARCHAR"/>
-            <result property="share_status" column="share_status" jdbcType="TINYINT"/>
-            <result property="create_user" column="create_user" jdbcType="BIGINT"/>
-            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+        <id property="shareId" column="share_id" jdbcType="BIGINT"/>
+        <result property="shareName" column="share_name" jdbcType="VARCHAR"/>
+        <result property="shareType" column="share_type" jdbcType="TINYINT"/>
+        <result property="shareDayType" column="share_day_type" jdbcType="TINYINT"/>
+        <result property="shareDay" column="share_day" jdbcType="TINYINT"/>
+        <result property="shareEndTime" column="share_end_time" jdbcType="TIMESTAMP"/>
+        <result property="shareUrl" column="share_url" jdbcType="VARCHAR"/>
+        <result property="shareCode" column="share_code" jdbcType="VARCHAR"/>
+        <result property="shareStatus" column="share_status" jdbcType="TINYINT"/>
+        <result property="createUser" column="create_user" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -24,4 +24,18 @@
         share_url,share_code,share_status,
         create_user,create_time
     </sql>
+
+    <select id="selectShareVOListByUserId" resultType="com.rocket.pan.server.modules.vo.RPanShareUrlListVO">
+        SELECT share_id       AS shareId,
+               share_name     AS shareName,
+               share_type     AS shareType,
+               share_day_type AS shareDayType,
+               share_end_time AS shareEndTime,
+               share_url      AS shareUrl,
+               share_code     AS shareCode,
+               share_status   AS shareStatus,
+               create_time    AS createTime
+        FROM r_pan_share
+        WHERE create_user = #{userId}
+    </select>
 </mapper>
