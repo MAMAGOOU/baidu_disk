@@ -19,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -51,44 +51,44 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "E:/myDesign/r-pan/framework/storage-engine/storage-engine-oss/src/main/resources/META-INF",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.12890625",
-    "project.structure.side.proportion": "0.16292137",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
-    "spring.configuration.checksum": "ec744f123876a383e1b492b47efaea78",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/myDesign/r-pan/framework/storage-engine/storage-engine-oss/src/main/resources/META-INF&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.12890625&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.16292137&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;ec744f123876a383e1b492b47efaea78&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "GitStage.ChangesTree.GroupingKeys": [
-      "directory",
-      "module",
-      "repository"
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "MySQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -111,82 +111,82 @@
       <recent name="com.rocket.pan" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.RPanServerLauncher">
-    <configuration name="FileTest.testGetBreadcrumbsSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RecycleTest.testFileDeleteSuccess">
+    <configuration name="RecycleTest.testFileDeleteFailByWrongUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="r-pan-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
+          <option name="PATTERN" value="com.rocket.pan.server.modules.recycle.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
-      <option name="METHOD_NAME" value="testGetBreadcrumbsSuccess" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.recycle" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.recycle.RecycleTest" />
+      <option name="METHOD_NAME" value="testFileDeleteFailByWrongUserId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileTest.testQueryUserFileListSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecycleTest.testFileDeleteSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="r-pan-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
+          <option name="PATTERN" value="com.rocket.pan.server.modules.recycle.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
-      <option name="METHOD_NAME" value="testQueryUserFileListSuccess" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.recycle" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.recycle.RecycleTest" />
+      <option name="METHOD_NAME" value="testFileDeleteSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileTest.testSearchSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecycleTest.testFileRestoreFailByWrongFilename1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="r-pan-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
+          <option name="PATTERN" value="com.rocket.pan.server.modules.recycle.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
-      <option name="METHOD_NAME" value="testSearchSuccess" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.recycle" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.recycle.RecycleTest" />
+      <option name="METHOD_NAME" value="testFileRestoreFailByWrongFilename1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileTest.testUploadSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecycleTest.testFileRestoreFailByWrongFilename2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="r-pan-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
+          <option name="PATTERN" value="com.rocket.pan.server.modules.recycle.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
-      <option name="METHOD_NAME" value="testUploadSuccess" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.recycle" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.recycle.RecycleTest" />
+      <option name="METHOD_NAME" value="testFileRestoreFailByWrongFilename2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileTest.uploadWithChunkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecycleTest.testFileRestoreFailByWrongUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="r-pan-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
+          <option name="PATTERN" value="com.rocket.pan.server.modules.recycle.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
-      <option name="METHOD_NAME" value="uploadWithChunkTest" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.recycle" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.recycle.RecycleTest" />
+      <option name="METHOD_NAME" value="testFileRestoreFailByWrongUserId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -201,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileTest.uploadWithChunkTest" />
-        <item itemvalue="JUnit.FileTest.testUploadSuccess" />
-        <item itemvalue="JUnit.FileTest.testQueryUserFileListSuccess" />
-        <item itemvalue="JUnit.FileTest.testGetBreadcrumbsSuccess" />
-        <item itemvalue="JUnit.FileTest.testSearchSuccess" />
+        <item itemvalue="JUnit.RecycleTest.testFileDeleteSuccess" />
+        <item itemvalue="JUnit.RecycleTest.testFileDeleteFailByWrongUserId" />
+        <item itemvalue="JUnit.RecycleTest.testFileRestoreFailByWrongFilename2" />
+        <item itemvalue="JUnit.RecycleTest.testFileRestoreFailByWrongFilename1" />
+        <item itemvalue="JUnit.RecycleTest.testFileRestoreFailByWrongUserId" />
       </list>
     </recent_temporary>
   </component>
@@ -295,7 +295,9 @@
       <workItem from="1700527651528" duration="69000" />
       <workItem from="1700575514933" duration="4380000" />
       <workItem from="1700581497662" duration="6749000" />
-      <workItem from="1700617933147" duration="17747000" />
+      <workItem from="1700617933147" duration="22088000" />
+      <workItem from="1700663873004" duration="3112000" />
+      <workItem from="1700668290041" duration="3917000" />
     </task>
     <task id="LOCAL-00001" summary="文件复制，上一次提交的功能是文件批量转移">
       <created>1700181912990</created>
