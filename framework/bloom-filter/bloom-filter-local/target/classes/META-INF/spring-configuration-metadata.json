@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "com.rocket.pan.bloom.filter.local",
+      "type": "com.rocket.pan.bloom.filter.local.LocalBloomFilterConfig",
+      "sourceType": "com.rocket.pan.bloom.filter.local.LocalBloomFilterConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.rocket.pan.bloom.filter.local.items",
+      "type": "java.util.List<com.rocket.pan.bloom.filter.local.LocalBloomFilterConfigItem>",
+      "sourceType": "com.rocket.pan.bloom.filter.local.LocalBloomFilterConfig"
+    }
+  ],
+  "hints": []
+}

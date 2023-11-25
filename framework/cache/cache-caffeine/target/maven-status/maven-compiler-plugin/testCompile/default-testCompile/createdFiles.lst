@@ -1,0 +1,5 @@
+com\rocket\pan\cache\caffeine\test\CaffeineCacheTest.class
+com\rocket\pan\cache\caffeine\test\config\CaffeineCacheProperties.class
+com\rocket\pan\cache\caffeine\test\config\CaffeineCacheConfig.class
+com\rocket\pan\cache\caffeine\test\instance\CacheAnnotationTester.class
+META-INF\spring-configuration-metadata.json

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.rocket.pan.cache.redis.test.RedisCacheTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.739 s - in com.rocket.pan.cache.redis.test.RedisCacheTest

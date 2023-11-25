@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.rocket.pan.server.modules.file.FileTest
+-------------------------------------------------------------------------------
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.329 s - in com.rocket.pan.server.modules.file.FileTest

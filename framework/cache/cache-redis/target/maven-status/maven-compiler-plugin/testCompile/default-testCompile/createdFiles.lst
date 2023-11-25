@@ -1,0 +1,3 @@
+com\rocket\pan\cache\redis\test\config\RedisCacheConfig.class
+com\rocket\pan\cache\redis\test\RedisCacheTest.class
+com\rocket\pan\cache\redis\test\instance\CacheAnnotationTester.class

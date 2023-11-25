@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.rocket.pan.cache.core.constants.CacheConstants;
 import com.rocket.pan.core.exception.RPanBusinessException;
 import com.rocket.pan.core.response.ResponseCode;
+import com.rocket.pan.server.common.cache.AnnotationCacheService;
 import com.rocket.pan.server.modules.file.constants.FileConstants;
 import com.rocket.pan.server.modules.file.context.CreateFolderContext;
 import com.rocket.pan.server.modules.file.entity.RPanUserFile;
@@ -28,7 +29,10 @@ import org.springframework.cache.CacheManager;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author 19750
@@ -46,6 +50,9 @@ public class UserServiceImpl extends ServiceImpl<RPanUserMapper, RPanUser> imple
 
     @Autowired
     private CacheManager cacheManager;
+
+    @Autowired
+    private AnnotationCacheService<RPanUser> cacheService;
 
     /**
      * 用户注册业务
@@ -404,6 +411,39 @@ public class UserServiceImpl extends ServiceImpl<RPanUserMapper, RPanUser> imple
         entity.setUpdateTime(new Date());
 
         userRegisterContext.setEntity(entity);
+    }
+
+    //================================private================================
+
+    @Override
+    public boolean removeById(Serializable id) {
+        return cacheService.removeById(id);
+    }
+
+    @Override
+    public boolean removeByIds(Collection<? extends Serializable> idList) {
+        throw new RPanBusinessException("请更换手动缓存");
+    }
+
+    @Override
+    public boolean updateById(RPanUser entity) {
+        return cacheService.updateById(entity.getUserId(), entity);
+    }
+
+    @Override
+    public boolean updateBatchById(Collection<RPanUser> entityList) {
+        throw new RPanBusinessException("请更换手动缓存");
+    }
+
+    @Override
+    public RPanUser getById(Serializable id) {
+        return cacheService.getById(id);
+        //return super.getById(id);
+    }
+
+    @Override
+    public List<RPanUser> listByIds(Collection<? extends Serializable> idList) {
+        throw new RPanBusinessException("请更换手动缓存");
     }
 }
 

@@ -21,5 +21,5 @@ public class PanServerConfig {
     /**
      * 分享链接的前缀
      */
-    private String sharePrefix = "http://127.0.0.1:8080/share/";
+    private String sharePrefix = "http://127.0.0.1:8082/share/";
 }

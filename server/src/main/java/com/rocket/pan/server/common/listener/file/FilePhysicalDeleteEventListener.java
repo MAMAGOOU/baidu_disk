@@ -24,6 +24,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.event.TransactionalEventListener;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -63,7 +64,7 @@ public class FilePhysicalDeleteEventListener implements ApplicationContextAware 
      *
      * @param event
      */
-    @EventListener(classes = FilePhysicalDeleteEvent.class)
+    //@EventListener(classes = FilePhysicalDeleteEvent.class)
     @TransactionalEventListener
     @Async(value = "eventListenerTaskExecutor")
     public void physicalDeleteFile(FilePhysicalDeleteEvent event) {
@@ -72,6 +73,7 @@ public class FilePhysicalDeleteEventListener implements ApplicationContextAware 
             return;
         }
         List<Long> realFileIdList = findAllUnusedRealFileIdList(allRecords);
+        // 进行ID处理后，同样需要进行判断
         if (CollectionUtils.isEmpty(realFileIdList)) {
             return;
         }

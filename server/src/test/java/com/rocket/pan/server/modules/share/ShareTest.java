@@ -38,7 +38,7 @@ import java.util.Objects;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = RPanServerLauncher.class)
-@Transactional
+//@Transactional
 public class ShareTest {
     @Autowired
     private IUserFileService iUserFileService;
@@ -304,6 +304,20 @@ public class ShareTest {
         Assert.notEmpty(fileVOList);
     }
 
+    @Test
+    public void init() {
+        CreateShareUrlContext context = new CreateShareUrlContext();
+        context.setUserId(1728020619909124096L);
+        context.setShareType(ShareTypeEnum.NEED_SHARE_CODE.getCode());
+        context.setShareDayType(ShareDayTypeEnum.PERMANENT_VALIDITY.getCode());
+        context.setShareFileIdList(Lists.newArrayList(1728020619909124096L));
+
+        for (int i = 0; i < 10000000; i++) {
+            context.setShareName("测试分享" + i);
+            iShareService.create(context);
+        }
+    }
+
 //============================================================
 
     private final static String USERNAME = "rocket";
@@ -349,6 +363,7 @@ public class ShareTest {
         userLoginContext.setPassword(PASSWORD);
         return userLoginContext;
     }
+
     /**
      * 查询登录用户的基本信息
      *

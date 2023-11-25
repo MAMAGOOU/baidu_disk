@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="r-pan-storage-engine-oss" />
+        <module name="r-pan-bloom-filter-core" />
         <module name="r-pan-swagger2" />
         <module name="r-pan-cache-core" />
         <module name="r-pan-cache-redis" />
@@ -15,6 +16,7 @@
         <module name="r-pan-schedule" />
         <module name="r-pan-distribution" />
         <module name="r-pan-storage-engine-fastdfs" />
+        <module name="r-pan-bloom-filter-local" />
         <module name="r-pan-core" />
         <module name="r-pan-storage-engine-core" />
         <module name="r-pan-mybatis-plus" />
@@ -34,30 +36,12 @@
         <module name="r-pan-server" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="r-pan-cache" target="11" />
-      <module name="r-pan-cache-caffeine" target="11" />
-      <module name="r-pan-cache-core" target="11" />
-      <module name="r-pan-cache-redis" target="11" />
-      <module name="r-pan-core" target="11" />
-      <module name="r-pan-distribution" target="11" />
-      <module name="r-pan-framework" target="11" />
-      <module name="r-pan-mybatis-plus" target="11" />
-      <module name="r-pan-orm" target="11" />
-      <module name="r-pan-parent" target="11" />
-      <module name="r-pan-schedule" target="11" />
-      <module name="r-pan-server" target="11" />
-      <module name="r-pan-storage-engine" target="11" />
-      <module name="r-pan-storage-engine-core" target="11" />
-      <module name="r-pan-storage-engine-fastdfs" target="11" />
-      <module name="r-pan-storage-engine-local" target="11" />
-      <module name="r-pan-storage-engine-oss" target="11" />
-      <module name="r-pan-swagger2" target="11" />
-      <module name="r-pan-web" target="11" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="r-pan-bloom-filter" options="-parameters" />
+      <module name="r-pan-bloom-filter-core" options="-parameters" />
+      <module name="r-pan-bloom-filter-local" options="-parameters" />
       <module name="r-pan-cache" options="-parameters" />
       <module name="r-pan-cache-caffeine" options="-parameters" />
       <module name="r-pan-cache-core" options="-parameters" />
