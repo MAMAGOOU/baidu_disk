@@ -20,6 +20,7 @@
         <module>orm</module>
         <module>storage-engine</module>
         <module>bloom-filter</module>
+        <module>lock</module>
     </modules>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

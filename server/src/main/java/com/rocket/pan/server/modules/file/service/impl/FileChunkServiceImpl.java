@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.rocket.pan.core.exception.RPanBusinessException;
 import com.rocket.pan.core.utils.IdUtil;
+import com.rocket.pan.lock.core.annotation.Lock;
 import com.rocket.pan.server.common.config.PanServerConfig;
 import com.rocket.pan.server.modules.file.context.FileChunkMergeAndSaveContext;
 import com.rocket.pan.server.modules.file.context.FileChunkSaveContext;
@@ -47,11 +48,11 @@ public class FileChunkServiceImpl extends ServiceImpl<RPanFileChunkMapper, RPanF
      * @param context
      */
     @Override
-    public synchronized void saveChunkFile(FileChunkSaveContext context) {
+    @Lock(name = "ossSaveChunkFile", keys = {"#context.userId", "#context.identifier"}, expireSecond = 10)
+    public void saveChunkFile(FileChunkSaveContext context) {
         doSaveChunkFile(context);
         doJudgeMergeFile(context);
     }
-
 
 
     /**

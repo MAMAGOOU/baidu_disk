@@ -19,8 +19,12 @@
         <module name="r-pan-bloom-filter-local" />
         <module name="r-pan-core" />
         <module name="r-pan-storage-engine-core" />
+        <module name="r-pan-lock-local" />
+        <module name="r-pan-lock-redis" />
         <module name="r-pan-mybatis-plus" />
+        <module name="r-pan-lock-zookeeper" />
         <module name="r-pan-web" />
+        <module name="r-pan-lock-core" />
       </profile>
       <profile name="Annotation profile for r-pan-parent" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -49,6 +53,11 @@
       <module name="r-pan-core" options="-parameters" />
       <module name="r-pan-distribution" options="-parameters" />
       <module name="r-pan-framework" options="-parameters" />
+      <module name="r-pan-lock" options="-parameters" />
+      <module name="r-pan-lock-core" options="-parameters" />
+      <module name="r-pan-lock-local" options="-parameters" />
+      <module name="r-pan-lock-redis" options="-parameters" />
+      <module name="r-pan-lock-zookeeper" options="-parameters" />
       <module name="r-pan-mybatis-plus" options="-parameters" />
       <module name="r-pan-orm" options="-parameters" />
       <module name="r-pan-parent" options="-parameters" />

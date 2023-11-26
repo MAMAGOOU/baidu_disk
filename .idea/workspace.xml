@@ -19,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="AnnotationType" />
         <option value="Interface" />
         <option value="Enum" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -68,18 +68,18 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "E:/myDesign/r-pan/framework/bloom-filter/bloom-filter-local/src/main/resources/META-INF",
+    "last_opened_file_path": "E:/myDesign/r-pan/framework/lock/lock-zookeeper/src/main/resources/META-INF",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.12890625",
     "project.structure.side.proportion": "0.16292137",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "settings.editor.splitter.proportion": "0.2703583",
-    "spring.configuration.checksum": "5b160bf63fc2e079a9aaf7d5ec5d3cd3",
+    "spring.configuration.checksum": "aaf0209c72c62620200f7ee398edd5a0",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -104,11 +104,11 @@
       <recent name="com.rocket.pan.storage.engine.oss" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\myDesign\r-pan\framework\lock\lock-zookeeper\src\main\resources\META-INF" />
       <recent name="E:\myDesign\r-pan\framework\bloom-filter\bloom-filter-local\src\main\resources\META-INF" />
       <recent name="E:\myDesign\r-pan\server\src\main\java\com\rocket\pan\server\modules\enums" />
       <recent name="E:\myDesign\r-pan\framework\storage-engine\storage-engine-oss\src\main\resources\META-INF" />
       <recent name="E:\myDesign\r-pan\framework\storage-engine\storage-engine-fastdfs\src\main\resources" />
-      <recent name="E:\myDesign\r-pan\server\src\main\java\com\rocket\pan\server\common\utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\myDesign\r-pan\server\src\main\resources\mappers\log" />
@@ -121,80 +121,82 @@
       <recent name="com.rocket.pan.server.common.event.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.RPanServerLauncher">
-    <configuration name="IdUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.core.utils.IdUtil" />
-      <module name="r-pan-core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.rocket.pan.core.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LocalBloomFilterTest.localBloomFilterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="r-pan-bloom-filter-local" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.rocket.pan.bloom.filter.local.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.bloom.filter.local.test" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.bloom.filter.local.test.LocalBloomFilterTest" />
-      <option name="METHOD_NAME" value="localBloomFilterTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShareTest.queryShareDetailSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FileTest.uploadWithChunkTest">
+    <configuration name="FileTest.uploadWithChunkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="r-pan-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.share.*" />
+          <option name="PATTERN" value="com.rocket.pan.server.modules.file.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.share" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.share.ShareTest" />
-      <option name="METHOD_NAME" value="queryShareDetailSuccess" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.file" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.file.FileTest" />
+      <option name="METHOD_NAME" value="uploadWithChunkTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShareTest.queryShareFileListSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="r-pan-server" />
+    <configuration name="LocalLockTest.lockTesterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="r-pan-lock-local" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.share.*" />
+          <option name="PATTERN" value="com.rocket.pan.lock.local.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.share" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.share.ShareTest" />
-      <option name="METHOD_NAME" value="queryShareFileListSuccess" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.lock.local.test" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.lock.local.test.LocalLockTest" />
+      <option name="METHOD_NAME" value="lockTesterTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShareTest.queryShareSimpleDetailSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="r-pan-server" />
+    <configuration name="RedisLockTest.lockRegistryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="r-pan-lock-redis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rocket.pan.server.modules.share.*" />
+          <option name="PATTERN" value="com.rocket.pan.lock.redis.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.rocket.pan.server.modules.share" />
-      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.server.modules.share.ShareTest" />
-      <option name="METHOD_NAME" value="queryShareSimpleDetailSuccess" />
+      <option name="PACKAGE_NAME" value="com.rocket.pan.lock.redis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.lock.redis.test.RedisLockTest" />
+      <option name="METHOD_NAME" value="lockRegistryTest" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RedisLockTest.lockTesterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="r-pan-lock-redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rocket.pan.lock.redis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rocket.pan.lock.redis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.lock.redis.test.RedisLockTest" />
+      <option name="METHOD_NAME" value="lockTesterTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZooKeeperLockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="r-pan-lock-zookeeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rocket.pan.lock.zookeeper.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rocket.pan.lock.zookeeper.test" />
+      <option name="MAIN_CLASS_NAME" value="com.rocket.pan.lock.zookeeper.test.ZooKeeperLockTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -208,11 +210,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.IdUtil" />
-        <item itemvalue="JUnit.LocalBloomFilterTest.localBloomFilterTest" />
-        <item itemvalue="JUnit.ShareTest.queryShareSimpleDetailSuccess" />
-        <item itemvalue="JUnit.ShareTest.queryShareFileListSuccess" />
-        <item itemvalue="JUnit.ShareTest.queryShareDetailSuccess" />
+        <item itemvalue="JUnit.FileTest.uploadWithChunkTest" />
+        <item itemvalue="JUnit.ZooKeeperLockTest" />
+        <item itemvalue="JUnit.RedisLockTest.lockTesterTest" />
+        <item itemvalue="JUnit.RedisLockTest.lockRegistryTest" />
+        <item itemvalue="JUnit.LocalLockTest.lockTesterTest" />
       </list>
     </recent_temporary>
   </component>
@@ -316,7 +318,10 @@
       <workItem from="1700842959142" duration="139000" />
       <workItem from="1700871494160" duration="156000" />
       <workItem from="1700877036663" duration="8997000" />
-      <workItem from="1700895912058" duration="2575000" />
+      <workItem from="1700895912058" duration="11275000" />
+      <workItem from="1700911601090" duration="6132000" />
+      <workItem from="1700923938372" duration="1389000" />
+      <workItem from="1700927253088" duration="4584000" />
     </task>
     <task id="LOCAL-00001" summary="文件复制，上一次提交的功能是文件批量转移">
       <created>1700181912990</created>
@@ -346,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700762062948</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="利用缓存提升了项目得QPS，集成布隆过滤器防止缓存击穿。使用jmeter在1000个线程同时访问得情况下，吞吐量提升了50%，响应时间提升了40%">
+      <created>1700899854249</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700899854249</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +380,8 @@
     <MESSAGE value="文件搜索、查询面包屑列表" />
     <MESSAGE value="回收站模块开发" />
     <MESSAGE value="项目分享模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="项目分享模块" />
+    <MESSAGE value="利用缓存提升了项目得QPS，集成布隆过滤器防止缓存击穿。使用jmeter在1000个线程同时访问得情况下，吞吐量提升了50%，响应时间提升了40%" />
+    <option name="LAST_COMMIT_MESSAGE" value="利用缓存提升了项目得QPS，集成布隆过滤器防止缓存击穿。使用jmeter在1000个线程同时访问得情况下，吞吐量提升了50%，响应时间提升了40%" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

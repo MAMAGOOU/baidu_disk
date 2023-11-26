@@ -1,0 +1,16 @@
+{
+  "properties": [
+    {
+      "name": "com.rocket.pan.lock.zookeeper.host",
+      "type": "java.lang.String",
+      "description": "ZooKeeper连接地址，多个用逗号隔开.",
+      "defaultValue": "39.99.156.23:2182"
+    },
+    {
+      "name": "com.rocket.pan.lock.zookeeper.root-path",
+      "type": "java.lang.String",
+      "description": "ZooKeeper分布式锁根路径.",
+      "defaultValue": "/r-pan-lock"
+    }
+  ]
+}

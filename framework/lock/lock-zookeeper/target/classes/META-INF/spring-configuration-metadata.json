@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "com.rocket.pan.lock.zookeeper",
+      "type": "com.rocket.pan.lock.zookeeper.ZooKeeperLockProperties",
+      "sourceType": "com.rocket.pan.lock.zookeeper.ZooKeeperLockProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.rocket.pan.lock.zookeeper.host",
+      "type": "java.lang.String",
+      "description": "zk链接地址，多个用逗号隔开",
+      "sourceType": "com.rocket.pan.lock.zookeeper.ZooKeeperLockProperties"
+    },
+    {
+      "name": "com.rocket.pan.lock.zookeeper.root-path",
+      "type": "java.lang.String",
+      "description": "zk分布式锁的根路径",
+      "sourceType": "com.rocket.pan.lock.zookeeper.ZooKeeperLockProperties"
+    }
+  ],
+  "hints": []
+}

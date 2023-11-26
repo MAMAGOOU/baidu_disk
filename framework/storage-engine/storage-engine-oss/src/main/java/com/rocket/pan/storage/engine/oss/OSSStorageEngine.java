@@ -11,6 +11,7 @@ import com.rocket.pan.core.constants.RPanConstants;
 import com.rocket.pan.core.exception.RPanFrameworkException;
 import com.rocket.pan.core.utils.FileUtils;
 import com.rocket.pan.core.utils.UUIDUtil;
+import com.rocket.pan.lock.core.annotation.Lock;
 import com.rocket.pan.storage.engine.core.AbstractStorageEngine;
 import com.rocket.pan.storage.engine.core.context.*;
 import com.rocket.pan.storage.engine.oss.config.OssStorageEngineConfig;
@@ -162,7 +163,8 @@ public class OSSStorageEngine extends AbstractStorageEngine {
      * @param context
      */
     @Override
-    protected synchronized void doStoreChunk(StoreFileChunkContext context) throws IOException {
+    @Lock(name = "ossDoStoreChunk", keys = {"#context.userId", "#context.identifier"}, expireSecond = 10)
+    protected void doStoreChunk(StoreFileChunkContext context) throws IOException {
         if (context.getTotalChunks() > TEN_THOUSAND_INT) {
             throw new RPanFrameworkException("分片数超过了限制，分片数不得大于： " + TEN_THOUSAND_INT);
         }

@@ -17,6 +17,12 @@
     <file url="file://$PROJECT_DIR$/framework/cache/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework/core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework/core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/lock/lock-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/lock/lock-local/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/lock/lock-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/lock/lock-zookeeper/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/lock/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/lock/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework/orm/mybatis-plus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework/orm/mybatis-plus/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework/orm/src/main/java" charset="UTF-8" />
